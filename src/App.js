@@ -1,25 +1,77 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Home from './Home';
+import data from './data/data'
+import { CSSTransition } from "react-transition-group";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+// class component
+class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      front:true,
+      appearHome: true,
+      property: data.properties[0]
+    }
+  }
+  handleFront=()=>{
+    if(this.state.front){
+      this.nextProperty();
+      this.state.front=false;
+    }
+    else{
+      this.state.front=true;
+    }
+  }
+
+  toggleAppear = () => {
+    this.setState({
+      appearHome: !this.state.appearHome
+    })
+  }
+
+  nextProperty = () => {
+    const newIndex = this.state.property.index+1;
+    this.setState({
+      property: data.properties[newIndex]
+    })
+  }
+
+  prevProperty = () => {
+    const newIndex = this.state.property.index-1;
+    this.setState({
+      front: false
+    })
+    this.setState({
+      property: data.properties[newIndex]
+    })
+    this.setState({
+      front:true
+    })
+  }
+
+  render() {
+    const {appearHome, property} = this.state;
+    return (
+      <div className="App">
+        {/* <button onClick={() => this.toggleAppear()}>Appear: {`${appearHome}`}</button>
+        <button onClick={() => this.nextProperty()} disabled={property.index === data.properties.length-1}>Next</button>
+        <button onClick={() => this.prevProperty()} disabled={property.index === 0}>Prev</button> */}
+
+        <CSSTransition
+          in={appearHome}
+          appear={true}
+          timeout={1000}
+          classNames="fade"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <div onClick={this.handleFront}>
+          <Home property={property} onClickCallback={() => this.prevProperty()}/>
+          </div>
+        </CSSTransition>
+      </div>
+    );
+  }
 }
 
 export default App;
