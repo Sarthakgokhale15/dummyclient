@@ -1,4 +1,13 @@
+.plane2{
 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* padding-top: 15vh; */
+  padding-left: 10vw ;
+  padding-bottom: 5vw;
+
+ }
 
 @media only screen and (max-width: 1080px){
   .sliderMain{

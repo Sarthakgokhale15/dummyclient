@@ -6,7 +6,7 @@ import About from './components/Home/About'
 import LogoSlider from './components/slider/slider'
 import './App.css'
 import CarousalBottom from './components/CarousalBottom/CarousalBottom'
-
+import Footer from './components/Footer/Footer'
 function App() {
   return (
     <div>
@@ -24,6 +24,8 @@ function App() {
       </div>
 
       <CarousalBottom/>
+      <Footer />
+      <Header />
 
     </div>
   )

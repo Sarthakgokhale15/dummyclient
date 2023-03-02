@@ -39,7 +39,7 @@ export default function CarousalBottom() {
 	}
   return (
 	<div className='mainCard'>
-		{/* <div className='imgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div> */}
+		<div className='imgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div>
 	<div className='Main'>
         <div className='BtnGroup'>
             <Button onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
@@ -85,7 +85,7 @@ export default function CarousalBottom() {
     <Button  variant="danger">Register Now</Button>{' '}
 	</div>
 	</div>
-	{/* <div className='imgCone2'><img src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/></div> */}
+	<div className='imgCone2'><img src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/></div>
 	</div>
 	
   )

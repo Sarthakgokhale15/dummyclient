@@ -3,24 +3,29 @@
     justify-content: center;
     position: relative;
     top:5vh;
+    width: 50vw;
 }
 .mainCard p{
     font-size: 2vh;
 }
 .imgCone1{
-padding-top:30%;
-margin-right: 5%;
+    padding-top:30%;
+    position: relative;
+    left: 35vw;
+    top:5vw
 
 }
 .imgCone2{
     padding-top: 8%;
+    position: relative;
+    left: 7vw;
 
 
 }
-.imgCone1 img,.imgCone2 img{
+/* .imgCone1 img,.imgCone2 img{
     max-height: 50vh;
     max-width: 50vw;
-}
+} */
 .BtnGroup{
     padding-right: 5vw;
     width: 100vw;
@@ -49,10 +54,13 @@ margin-right: 5%;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    
 }
 
-.main{
+.Main{
     padding-bottom: 30%;
+    position: relative;
+    left: 25vw;
     /* display: flex; */
 }
 .right-to-left-enter {
@@ -101,18 +109,24 @@ margin-right: 5%;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 .btn{
     display: flex;
     justify-content: center;
 }
+.mainCard img{
+    max-width: 15vw;
+    max-height: 15vh;
+}
 
 @media only screen and (max-width: 1080px){
     .mainCard{
-        width:80vw;
+        width:60vw;
         position: relative;
         top:100vh;
-        left: 10vw;
+        right:5vw;
+        /* left: 10vw; */
         text-align: center;
       
     }
@@ -120,8 +134,15 @@ margin-right: 5%;
         font-size: 1.5vh;
     }
     .imgCone1{
+        position: relative;
+       
         max-width: 30vw;
         max-height: 30vh;
+        top:55vh;
+
+    }
+    .imgCone2{
+        top:15vh;
     }
    
     .BtnGroup {

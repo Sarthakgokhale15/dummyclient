@@ -1,0 +1,78 @@
+.about1 {
+    width: 100%;
+    padding: 2rem;
+
+   /* background-size: contain; */
+   background-image: url("https://ik.imagekit.io/suprkid/Vector-2-3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677477737438");
+   background-size: contain;
+   /* height: 50vh;  height for mobile screen */
+   background-repeat: no-repeat;
+   height: 110vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-position: center top;
+   flex-direction: column;
+ }
+ .register{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
+.cloud1{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+  padding-left: 2%;
+}
+.cloud2{
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.imageRegister{
+  position: absolute;
+  top: 50%;
+}
+.cloud3{
+
+  padding-top: 23%;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+ 
+
+}
+.Form1{
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 110%;
+  z-index: 2;
+}
+.rainbow{
+  display: flex;
+  width: 100vw;
+}
+
+.cloud4{
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 60%;
+  right: 2%;
+}
+.cloud5{
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  bottom: 30%;
+  left: 5%;
+}
