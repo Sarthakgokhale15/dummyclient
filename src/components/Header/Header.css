@@ -1,0 +1,15 @@
+.navlinks{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+.navbar-main{
+    /* height: 13vh; */
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.navContainer{
+    justify-content: space-evenly;
+}

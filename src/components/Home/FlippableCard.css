@@ -4,3 +4,8 @@
     justify-content:center;
     flex-direction: column;
 }
+@media only screen and (max-width: 1080px) {
+    .card{
+        height: 70vh;
+    }
+}

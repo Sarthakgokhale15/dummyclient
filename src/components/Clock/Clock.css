@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .timer {
+    text-align: center;
+    height: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  
+  .clock {
+    position: relative;
+    top:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+    width: 100%;
+    color: #EF495E;
+    
+  
+  }
+  
+  .clock section {
+    height:12vh;
+    /* position: relative; */
+    /* bottom: 55%; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 1%; */
+    /* padding-right: 2rem; */
+    /* margin-left: 2rem; */
+    /* margin-bottom: 0.5rem; */
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    background-color: white;
+    border-radius: 3px;
+    width: 10vw;
+  }
+  .clock section p {
+    /* font-size: 2vw; */
+    font-weight: bolder;
+    
+  }
+  .clock section small {
+    color: #EF495E;
+    text-shadow: none;
+    font-weight: bold;
+  }
+  .separator{
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  @media only screen and (max-width: 1080px) {
+    .clock section{
+      width: 20vw;
+    }
+}

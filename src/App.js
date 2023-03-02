@@ -1,77 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import Home from './Home';
-import data from './data/data'
-import { CSSTransition } from "react-transition-group";
+import React from 'react'
+import CustomCarousel from './components/CarousalTop/CustomCarousal'
+import Timer from './components/Clock/Timer/Timer'
+import Header from './components/Header/Header'
+import About from './components/Home/About'
+import LogoSlider from './components/slider/slider'
+import './App.css'
+import CarousalBottom from './components/CarousalBottom/CarousalBottom'
 
-// class component
-class App extends Component {
+function App() {
+  return (
+    <div>
+      <Header />
+      <Timer />
+      <CustomCarousel />
+      <About />
+      <div className='plane2'><img src='https://ik.imagekit.io/suprkid/Groupplane.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677315309559'/></div>
 
-  constructor(props){
-    super(props);
-    this.state = {
-      front:true,
-      appearHome: true,
-      property: data.properties[0]
-    }
-  }
-  handleFront=()=>{
-    if(this.state.front){
-      this.nextProperty();
-      this.state.front=false;
-    }
-    else{
-      this.state.front=true;
-    }
-  }
-
-  toggleAppear = () => {
-    this.setState({
-      appearHome: !this.state.appearHome
-    })
-  }
-
-  nextProperty = () => {
-    const newIndex = this.state.property.index+1;
-    this.setState({
-      property: data.properties[newIndex]
-    })
-  }
-
-  prevProperty = () => {
-    const newIndex = this.state.property.index-1;
-    this.setState({
-      front: false
-    })
-    this.setState({
-      property: data.properties[newIndex]
-    })
-    this.setState({
-      front:true
-    })
-  }
-
-  render() {
-    const {appearHome, property} = this.state;
-    return (
-      <div className="App">
-        {/* <button onClick={() => this.toggleAppear()}>Appear: {`${appearHome}`}</button>
-        <button onClick={() => this.nextProperty()} disabled={property.index === data.properties.length-1}>Next</button>
-        <button onClick={() => this.prevProperty()} disabled={property.index === 0}>Prev</button> */}
-
-        <CSSTransition
-          in={appearHome}
-          appear={true}
-          timeout={1000}
-          classNames="fade"
-        >
-          <div onClick={this.handleFront}>
-          <Home property={property} onClickCallback={() => this.prevProperty()}/>
-          </div>
-        </CSSTransition>
+      <div className='sliderMain'>
+        <div  style={{backgroundColor:"#1B2631",height:'20rem',display:"flex",justifyContent:"center",flexDirection:"column",textAlign:'center'}}>
+          <h2 style={{color:"white" ,marginTop:'5rem'}}>Our Sponsers</h2>
+          <LogoSlider />
+        </div>
       </div>
-    );
-  }
+
+      <CarousalBottom/>
+
+    </div>
+  )
 }
 
-export default App;
+export default App
