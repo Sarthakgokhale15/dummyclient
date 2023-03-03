@@ -1,0 +1,29 @@
+.bgImgContainer{
+     width: 100vw;
+      /* padding: 2rem; */
+
+     /* background-size: contain; */
+    
+     /* height: 50vh;  height for mobile screen*/ 
+
+     height: 160vh;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     background-position: center top;
+     flex-direction: column;
+}
+@media screen and (max-width: 500px){
+    .bgImgContainer{
+        max-height: 10vh;
+
+        position: relative;
+        /* background-size: 150vw; */
+        /* background-position: 10%; */
+
+    }
+    .bgImgContainer p{
+        font-size: 1vh;
+    }
+}
+
