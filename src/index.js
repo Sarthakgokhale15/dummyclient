@@ -6,11 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import Register from './components/Register/Register'
 import AfterRegister from './components/Register/AfterRegister/AfterRegister'
 import Event from './components/Event/Event'
+import AboutUs from './components/AboutUs/AboutUs';
+import About from './components/Home/About';
 
+import {Route,Routes,BrowserRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Event />
+   <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<App/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/registrationSuccessful' element={<AfterRegister/>}/>
+        <Route path='/Aboutus' element={<AboutUs/>}/>
+        <Route path='/Event' element={<Event/>}/>
+      </Routes>
+   </BrowserRouter>
+    
   </React.StrictMode>
 );
 

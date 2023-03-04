@@ -1,0 +1,16 @@
+.EventFooterImg{
+    /* position: relative; */
+    display: flex;
+   
+    /* padding-top: 15vh; */
+    font-weight: bold;
+}
+.regBtn {
+    margin-left: 1vw;
+    margin-right:1vw;
+    /* margin-bottom:10vh; */
+}
+.EventFooterMain{
+    position: relative;
+    top:50vh;
+}

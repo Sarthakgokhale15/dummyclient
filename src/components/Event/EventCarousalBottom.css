@@ -1,18 +1,20 @@
 .mainCard{
     display: flex;
     justify-content: center;
-    position: relative;
-    top:5vh;
+    /* position: relative; */
+    /* height: 100vh; */
+    /* top:70vh; */
     width: 50vw;
 }
 .mainCard p{
     font-size: 2vh;
 }
 .imgCone1{
-    padding-top:30%;
+    /* padding-top:30%; */
     position: relative;
     left: 35vw;
-    top:5vw
+    height:100vh;
+    /* top:5vw */
 
 }
 .imgCone2{
@@ -35,6 +37,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* bottom:55vh; */
 
 }
 .BtnGroup Button{
@@ -61,7 +64,8 @@
 .Main{
     padding-bottom: 30%;
     position: relative;
-    left: 25vw;
+    left: 24vw;
+    top:0;
     /* display: flex; */
 }
 .right-to-left-enter {
@@ -104,7 +108,7 @@
     opacity: 0;
 }     
 .bottomCard{
-    height:60vh;
+    height:90vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -113,43 +117,56 @@
     
 }
 .btn{
+    position: relative;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    
 }
-.mainCard img{
-    max-width: 15vw;
-    max-height: 15vh;
+.mainCard .EventDetailsImg img{
+    max-width: 55vw;
+    max-height: 75vh;
 }
+
 
 @media only screen and (max-width: 1080px){
     .mainCard{
-        width:60vw;
+        width:70vw;
         position: relative;
         top:50vh;
-        right:5vw;
+        /* right:5vw; */
         /* left: 10vw; */
         text-align: center;
+
       
     }
     .mainCard p{
         font-size: 1.5vh;
     }
+    .imgCone1 img{
+        max-width: 20vw;
+        max-height: 20vh;
+    }
     .imgCone1{
+
         position: relative;
-       
-        max-width: 30vw;
-        max-height: 30vh;
-        top:55vh;
+        height:100vh;
+        /* max-width: 20vw; */
+        /* max-height: 20vh; */
+        /* top:55vh; */
 
     }
     .imgCone2{
-        top:15vh;
+        /* top:15vh; */
     }
    
     .BtnGroup {
-        margin-top: 5vh;
-       margin-bottom: 10vh;
+        /* margin-top: 5vh; */
+       /* margin-bottom: 10vh; */
         
+    }
+    .EventDetailsImg {
+        height: 40vh;
     }
     
 }
