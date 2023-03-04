@@ -14,18 +14,18 @@ function App() {
       <Timer />
       <CustomCarousel />
       <About />
-      <div className='plane2'><img src='https://ik.imagekit.io/suprkid/Groupplane.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677315309559'/></div>
+      <div className='Homeplane2'><img src='https://ik.imagekit.io/suprkid/Groupplane.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677315309559'/></div>
 
       <div className='sliderMain'>
-        <div  style={{backgroundColor:"#1B2631",height:'20rem',display:"flex",justifyContent:"center",flexDirection:"column",textAlign:'center'}}>
-          <h2 style={{color:"white" ,marginTop:'5rem'}}>Our Sponsers</h2>
+        <div  className="sliderParent"style={{backgroundColor:"#1B2631",display:"flex",justifyContent:"center",flexDirection:"column",textAlign:'center'}}>
+          <h2 style={{color:"white" ,marginTop:'5rem'}}>Our Sponsors</h2>
           <LogoSlider />
         </div>
       </div>
 
       <CarousalBottom/>
       <Footer />
-      <Header />
+      <Header bgcolor={'#152D5A'} color={'white'} expand={false}/>
 
     </div>
   )

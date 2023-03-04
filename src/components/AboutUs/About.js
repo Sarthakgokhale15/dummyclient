@@ -4,9 +4,9 @@ function About() {
   return (
     <div className='AbouEvent' >
         <img style={{maxWidth:'100vw'}} src='https://ik.imagekit.io/suprkid/image.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677848478891'/>
-        <div className='aboutText'>
-          <h2>About the event</h2>
-          <p className='paragraph2' style={{color:'black',fontWeight:'normal'}}>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu</p>
+        <div className='HomeaboutText'>
+          <h2 style={{color:'black'}}>About Us</h2>
+          <p className='AboutUsParagraph'>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu</p>
           {/* <p className='paragraph2'>Event Date:28th & 29th April 2023(Saturday & Sunday) <br></br>Timings:8 AM Onwards <br></br>Venue: Phoniex Market City Mall ,Kurla, Mumbai</p> */}
 
         </div>

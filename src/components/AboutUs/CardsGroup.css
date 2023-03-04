@@ -1,7 +1,7 @@
 
  .wrapper {
     margin-bottom: 5vh;
-        width: 100vw;
+    width: 100vw;
 	 display: grid;
 	 grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
 	 gap: 2rem;
@@ -61,4 +61,13 @@
     align-items: center;
     justify-content: center;
 }
- 
+@media only screen and (max-width: 600px){
+	.cardAbout{
+		width:75vw;
+	}
+	.cardAbout .card__image{
+		max-width: 50vw;
+		max-height: 50vh;
+	}
+
+}

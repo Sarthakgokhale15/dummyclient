@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import './Card.css'
 
-const Card = ({property,onClickCallback,img}) => {
+const Card = ({property,onClickCallback,img,text}) => {
     
     const {index, picture, city, address, bedrooms, bathrooms, carSpaces,temp} = property;
     if(temp==='back'){
@@ -29,7 +29,7 @@ const Card = ({property,onClickCallback,img}) => {
         <div id={`card-${index}`} className="card" >
             <img className='cardImg' src={img} alt={city} />
             <div className="details">
-                <p>Cube Competition</p>
+                <p>{text}</p>
             </div>
         </div>
         

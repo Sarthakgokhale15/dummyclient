@@ -4,7 +4,7 @@ import React from 'react';
 import Card from './Card';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const Home = ({property,onClickCallback,img}) => {
+const Home = ({property,onClickCallback,img,text}) => {
     const handleClick=()=>{
         onClickCallback();
     }
@@ -17,7 +17,7 @@ const Home = ({property,onClickCallback,img}) => {
                     timeout={100}
                     classNames="slide"
                 >
-                    <Card img={img} property={property} onClickCallback={handleClick}/>
+                    <Card text={text}img={img} property={property} onClickCallback={handleClick}/>
                 </CSSTransition>
             </TransitionGroup>
             

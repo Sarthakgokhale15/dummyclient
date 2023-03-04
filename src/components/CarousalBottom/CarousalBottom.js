@@ -7,7 +7,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 export default function CarousalBottom() {
 	// const navigate = useNavigate();
 	const [slideNo, setslideNo] = useState(0);
-	const arr=['kids','parents','sponsers'];
+	const arr=['Kids','Parents','Sponsors'];
 	const data=[
 		{	
 			"point1":"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
@@ -38,11 +38,11 @@ export default function CarousalBottom() {
 		setslideNo(index)
 	}
   return (
-	<div className='mainCard'>
-		<div className='imgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div>
+	<div className='HomemainCard'>
+		<div className='HomeimgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div>
 	<div className='Main'>
         <div className='BtnGroup'>
-            <Button onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
+            <Button  onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
         </div>	
@@ -82,7 +82,7 @@ export default function CarousalBottom() {
 	
 	<div className='btn'>
 	{/* <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '} */}
-    <Button  variant="danger">Register Now</Button>{' '}
+    <Button  size='lg'variant="danger">Register Now</Button>{' '}
 	</div>
 	</div>
 	<div className='imgCone2'><img src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/></div>

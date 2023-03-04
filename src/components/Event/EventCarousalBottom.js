@@ -148,7 +148,7 @@ export default function EventCarousalBottom() {
 		
 
 	<div className='Main'>
-        <div className='BtnGroup' style={{bottom:slideNo===0?'100vh':'30vh'}}>
+        <div className='BtnGroup' style={{bottom:slideNo===0?'70vh':'30vh'}}>
             <Button onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}

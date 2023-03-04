@@ -15,7 +15,7 @@
   }
   .slider {
     background: transparent;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
     height: 100px;
     margin: auto;
     overflow: hidden;
@@ -52,6 +52,25 @@
   .sliderBox{
     display: flex;
     position: relative;
-    top: 15%;
+    top: 8vh;
   }
-  
+  @media only screen and (max-width: 600px){
+
+    .sliderBox{
+     
+      display: flex;
+      position: absolute;
+      top:10;
+      padding-top: 10vh;
+
+     
+    }
+    .sliderBox img{
+      max-width: 15vw;
+      max-height: 15vh;
+    }
+    .slider{
+      height: 150px;
+    }
+    
+}

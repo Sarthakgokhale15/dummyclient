@@ -7,8 +7,9 @@ import validator from "validator";
 import {useForm} from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-function CustomForm() {
 
+function CustomForm() {
+  const navigate = useNavigate();
   const [submit, setsubmit] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
   const [genderVal, setgenderVal] = useState('')
@@ -69,14 +70,14 @@ function CustomForm() {
     event.preventDefault()
     console.log(formData)
     setsubmit(true);
-    // axios.get(`http://localhost:3001/api/v1/batch`).then((response) => {
-    //  console.log(response.status);
-    // // if(response.status==200){
-    // //   navigate("/registrationSuccessful");
-    // //  }
-    // });
+    axios.get(`http://localhost:3001/api/v1/batch`).then((response) => {
+     console.log(response.status);
+    // if(response.status==200){
+    //   navigate("/registrationSuccessful");
+    //  }
+    });
 
-    // navigate("/");
+    navigate("/");
     // axios post to database
   }
   return (
@@ -167,7 +168,7 @@ function CustomForm() {
         </div>
         </div>
         <div className="form-group btn">
-          <Button  className="btn" type="submit" variant="danger">Register Now</Button>{' '}
+          <Button  onClick={onSubmitHandler} className="btn" type="submit" variant="danger">Submit</Button>{' '}
           
         </div>
       </form>

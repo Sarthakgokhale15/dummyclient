@@ -129,14 +129,17 @@
 }
 
 
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 1480px){
     .mainCard{
-        width:70vw;
+        width:50vw;
         position: relative;
         top:50vh;
         /* right:5vw; */
         /* left: 10vw; */
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
       
     }
@@ -169,4 +172,19 @@
         height: 40vh;
     }
     
+}
+@media only screen and (max-width: 600px){
+    .mainCard{
+        padding-top: 20vh;
+    }
+    
+    .BtnGroup Button{
+        max-width: 35vw;
+        max-height: 10vh;
+        font-size: 1.1vh;
+        font-weight: bold;
+    }
+    .EventDetailsImg{
+        max-height: 30vh;
+    }
 }

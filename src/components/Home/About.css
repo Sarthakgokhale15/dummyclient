@@ -1,5 +1,6 @@
 
 .about {
+    
      width: 100%;
  
      background-image: url("https://ik.imagekit.io/suprkid/Vectortemp.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677303870043");
@@ -24,7 +25,7 @@
      align-items: center;
      position: relative;
 
-     bottom: 17%;
+     top: 10vh;
  
  
  }
@@ -32,9 +33,12 @@
      font-weight: bold;
      padding-top: 1rem;
   }
-  .paragraph{
-     width: 55%;
-     font-size: 1.1vw;
+  .Homeparagraph{
+     width: 60%;
+     /* font-size: 1.1vw; */
+     color: #667085;
+     font-size: 20px;
+    line-height: 30px;
      
  }
   .clouds{
@@ -107,7 +111,7 @@
     top: 20%;
     right: 8%;
  }
- .aboutText{
+ .HomeaboutText{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -119,7 +123,7 @@
 
  /* media queries for responsive designs */
 
- @media only screen and (max-width: 1080px) {
+ @media only screen and (max-width: 1400px) {
     .about {
 
       background-size: 160vw; /* half image size on larger screens */
@@ -128,10 +132,13 @@
     .cloud1,.image2{
       max-width: 30vw;
     }
-    .paragraph{
+    .Homeparagraph{
+      
         font-size: 65%;
     }
     .box{
+      position: relative;
+      
         width: 100vw;
     }
     .boximg{
@@ -186,3 +193,18 @@
       max-height: 10vh;
     }
   }
+
+
+@media only screen and (max-width: 600px){
+  .Homeparagraph{
+    width: 70vw;
+    line-height: 2;
+  }
+  .cardGroup{
+    top:15vh;
+  }
+  .box{
+    position: relative;
+    top:50vh;
+  }
+}

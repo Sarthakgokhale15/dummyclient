@@ -1,7 +1,7 @@
 body{
-  font-family: Inter, sans-serif;;
+  font-family: Inter, sans-serif;
 }
-.plane2{
+.Homeplane2{
 
   display: flex;
   flex-direction: row;
@@ -16,6 +16,21 @@ body{
   .sliderMain{
 
     position: relative;
-    top:100vh
+    top:100vh;
+  }
+}
+@media only screen and (max-width: 600px){
+  .Homeplane2{
+
+    position: relative;
+    top:60vh;
+    padding-left: 0;
+  }
+  .Homeplane2 img{
+    max-width: 20vw;
+    max-height: 20vh;
+  }
+  .sliderParent{
+    height:20vh;
   }
 }

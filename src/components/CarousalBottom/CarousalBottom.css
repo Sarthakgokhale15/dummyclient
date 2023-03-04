@@ -1,14 +1,14 @@
-.mainCard{
+.HomemainCard{
     display: flex;
     justify-content: center;
     position: relative;
     top:5vh;
     width: 50vw;
 }
-.mainCard p{
+.HomemainCard p{
     font-size: 2vh;
 }
-.imgCone1{
+.HomeimgCone1{
     padding-top:30%;
     position: relative;
     left: 35vw;
@@ -115,13 +115,13 @@
     display: flex;
     justify-content: center;
 }
-.mainCard img{
+.HomemainCard img{
     max-width: 15vw;
     max-height: 15vh;
 }
 
 @media only screen and (max-width: 1080px){
-    .mainCard{
+    .HomemainCard{
         width:60vw;
         position: relative;
         top:100vh;
@@ -130,10 +130,10 @@
         text-align: center;
       
     }
-    .mainCard p{
+    .HomemainCard p{
         font-size: 1.5vh;
     }
-    .imgCone1{
+    .HomeimgCone1{
         position: relative;
        
         max-width: 30vw;
@@ -146,9 +146,25 @@
     }
    
     .BtnGroup {
-        margin-top: 5vh;
+        margin-top: 10vh;
        margin-bottom: 10vh;
         
     }
+    /* .BtnGroup Button{
+        width: 50vw;
+    } */
     
+}
+@media only screen and (min-width: 900px){
+
+    .BtnGroup Button{
+        width: 15vw;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .BtnGroup Button{
+        width: 100vw;
+    }
 }

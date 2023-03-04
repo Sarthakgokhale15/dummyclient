@@ -69,7 +69,7 @@ class App extends Component {
           classNames="fade"
         >
           <div onClick={this.handleFront1}>
-          <Home img={this.props.img} property={property1} onClickCallback={() => this.prevProperty1()}/>
+          <Home text={this.props.text}img={this.props.img} property={property1} onClickCallback={() => this.prevProperty1()}/>
           </div>
         </CSSTransition>
 
