@@ -7,7 +7,12 @@
     width: 50vw;
 }
 .mainCard p{
-    font-size: 2vh;
+    font-size: 20px;
+   
+
+}
+.desc{
+    /* color: #667085; */
 }
 .imgCone1{
     /* padding-top:30%; */
@@ -120,7 +125,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     
 }
 .mainCard .EventDetailsImg img{
@@ -133,7 +138,7 @@
     .mainCard{
         width:50vw;
         position: relative;
-        top:50vh;
+        top:30vh;
         /* right:5vw; */
         /* left: 10vw; */
         text-align: center;
@@ -144,7 +149,7 @@
       
     }
     .mainCard p{
-        font-size: 1.5vh;
+        font-size: 2vh;
     }
     .imgCone1 img{
         max-width: 20vw;
@@ -171,12 +176,20 @@
     .EventDetailsImg {
         height: 40vh;
     }
-    
+   
 }
 @media only screen and (max-width: 600px){
-    .mainCard{
-        padding-top: 20vh;
+    .CarousalCardContent p{
+        font-size: 1.5vh;
     }
+    .mainCard{
+        padding-top: 10vh;
+    }
+    .CarousalCardContent{
+        margin-bottom: 30vh;
+    }
+    
+
     
     .BtnGroup Button{
         max-width: 35vw;
@@ -187,4 +200,5 @@
     .EventDetailsImg{
         max-height: 30vh;
     }
+    
 }

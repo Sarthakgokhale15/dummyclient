@@ -7,19 +7,19 @@ import Header from '../Header/Header';
 function EventFooter() {
   return (
     <>
-        <div className='EventFooterMain'>
-            <div className='EventFooterImg' style={{width:'100vw',display:'flex',alignItems:'flex-end',justifyContent:'flex-end'}}>
+        <div className='EventFooterMain' >
+            {/* <div className='EventFooterImg' style={{width:'100vw',display:'flex',alignItems:'flex-end',justifyContent:'flex-end'}}>
                 <img src='https://ik.imagekit.io/suprkid/Vector-5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677851993537'/>
-            </div>
+            </div> */}
             
             
         
-            <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'5vh'}}>
+            <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'15vh'}}>
                 <p style={{fontWeight:'bold'}}>Click below for Rules & Regulations</p>
                 <div className='regBtn' style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',}}>
-                    <Button className='regBtn' variant="outline-secondary">Regulation</Button>{' '}
-                    <Button className='regBtn' variant="outline-secondary">Offline Competition Rules</Button>{' '}
-                    <Button className='regBtn' variant="outline-secondary">Watch Scrambling Videos</Button>{' '}
+                    <Button onClick={() => window.open("https://drive.google.com/file/d/1nX0wfSKav3DkwTTdRaip91XybOz5HZnu/view")} className='regBtn' variant="outline-secondary">Regulation</Button>{' '}
+                    <Button onClick={() => window.open("https://drive.google.com/file/d/1wenOHVkZlIzFhOpi1uOnFWD8UGIg9fVB/view")} className='regBtn' variant="outline-secondary">Offline Competition Rules</Button>{' '}
+                    <Button onClick={() => window.open("https://www.youtube.com/playlist?list=PLU9tNOmRgaYFIuc-FEiTliWlZNx-UqRj0")} className='regBtn' variant="outline-secondary">Watch Scrambling Videos</Button>{' '}
                 </div>
             </div>
             <div style={{position:'relative',top:'10vh',width:'100vw',display:'flex',alignItems:'flex-start',zIndex:1}}>

@@ -40,7 +40,8 @@
     margin-left: 4vw;
 }
 .CarousalCardContent{
-    
+    color: #667085;
+    font-weight: bold;
     width: 60vw;
     /* padding: 0 25rem; */
     /* width:50%; */
@@ -119,6 +120,10 @@
     max-width: 15vw;
     max-height: 15vh;
 }
+.Reg{
+    
+    margin-top: 15vh;
+}
 
 @media only screen and (max-width: 1080px){
     .HomemainCard{
@@ -132,6 +137,8 @@
     }
     .HomemainCard p{
         font-size: 1.5vh;
+        
+
     }
     .HomeimgCone1{
         position: relative;
@@ -147,12 +154,13 @@
    
     .BtnGroup {
         margin-top: 10vh;
-       margin-bottom: 10vh;
+        margin-bottom: 10vh;
         
     }
     /* .BtnGroup Button{
         width: 50vw;
     } */
+   
     
 }
 @media only screen and (min-width: 900px){
@@ -160,10 +168,17 @@
     .BtnGroup Button{
         width: 15vw;
     }
+    .BtnGroup{
+        margin-top: 10vh;
+        
+    }
 }
 
 @media only screen and (max-width: 600px){
-
+ 
+    .BtnGroup{
+       margin-top: 5vh;
+    }
     .BtnGroup Button{
         width: 100vw;
     }

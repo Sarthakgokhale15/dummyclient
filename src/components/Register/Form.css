@@ -10,6 +10,7 @@
     background-color: white;
   }
   .Form{
+    width: 100%;
     text-align: left;
   }
   
@@ -66,10 +67,11 @@
 .col1{
   display: flex;
   flex-direction: column;
+  /* padding-right: 15vw; */
 }
 .form{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 .category,.gender{
@@ -97,15 +99,40 @@
 input:invalid~span{
   display: block;
 }
-@media only screen and (max-width: 1080px) {
+@media only screen and (min-width: 900px) {
+  input::placeholder {
+    font: 14px sans-serif;
+  }
   .form label{
-    font-size: 3vw;
+    font-size: 14px;
+    /* font-size: 1vh; */
   }
   .form span{
-    font-size: 3vw;
+    /* font-size: 1vw; */
+    font-size: 14px;
   }
   .form input{
     max-width: 30vw;
   }
+  .form{
+    flex-direction: row;
+  }
+  .col1{
+    padding-right: 15vw;
+  }
  
 }
+/* @media only screen and (max-width: 600){
+  .FormContainer h1{
+    font-size: 400;
+  }
+    .form label{
+    font-size: 1vw;
+  }
+  .form span{
+    font-size: 1vw;
+  }
+  .form input{
+    max-width: 30vw;
+  }
+} */

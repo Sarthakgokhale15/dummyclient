@@ -124,6 +124,8 @@ h2{
 /* media queries for responsive designs */
 
 @media only screen and (max-width: 1400px) {
+
+
  .about {
 
    background-size: 160vw; /* half image size on larger screens */
@@ -192,6 +194,9 @@ h2{
    max-width: 10vw;
    max-height: 10vh;
  }
+ .HomeaboutText h2{
+  padding-top:'50vh';
+ }
 }
 
 
@@ -215,4 +220,6 @@ h2{
     position: relative;
     /* max-height: 5vh; */
   }
+ 
+  
 }

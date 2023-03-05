@@ -13,7 +13,7 @@ function CustomCarousel() {
         />
        <Carousel.Caption>
           <h3>Cube Competition</h3>
-          <p>...</p>
+          {/* <p>...</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={3000}>
@@ -24,7 +24,7 @@ function CustomCarousel() {
         />
         <Carousel.Caption>
           <h3>Mental Math</h3>
-          <p>...</p>
+          {/* <p>...</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={3000}>
@@ -35,7 +35,7 @@ function CustomCarousel() {
         />
         <Carousel.Caption>
           <h3>SUPER Tank</h3>
-          <p>...</p>
+          {/* <p>...</p> */}
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

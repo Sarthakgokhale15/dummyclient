@@ -14,11 +14,11 @@ function About() {
         <div className='ImgGroup'>
           <div style={{display:'flex',flexDirection:'column'}}>
             <img className='EventimgBox1' src='https://ik.imagekit.io/suprkid/Group-4.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677505845780'/>
-            <img style={{paddingTop:'100vh'}}  src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/>
+            {/* <img style={{paddingTop:'100vh'}}  src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/> */}
           </div>
           <div style={{display:'flex',flexDirection:'column'}}>
-          {/* <img className='EventimgCone1' src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/> */}
-            <img  style={{paddingBottom:'100vh'}} className='EventimgCone2' src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/>
+          {/* <img style={{position:'relative',right:'40vw',top:'15vh'}}  className='EventimgCone3' src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/> */}
+            <img  style={{paddingBottom:'10vh',position:'relative',bottom:'15vh'}} className='EventimgCone2' src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/>
             
             </div>
         </div>

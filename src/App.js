@@ -22,7 +22,9 @@ function App() {
           <LogoSlider />
         </div>
       </div>
-
+      {/* <div style={{width:'100vw',position:'relative',display:'flex',color:'#101828',alignItems:'center',justifyContent:'center',marginTop:'10vh'}}>
+        <h1>Whats In It For Us!</h1>
+      </div> */}
       <CarousalBottom/>
       <Footer />
       <Header bgcolor={'#152D5A'} color={'white'} expand={false}/>

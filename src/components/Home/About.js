@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button';
 // import FlippableCard from './flippable-card';
 import {CSSTransition,TransitionGroup} from 'react-transition-group';
 import FlipCard from './FlipCard'
+import { useNavigate } from "react-router-dom";
 export default function About() {
+  const navigate = useNavigate();
   return (
     <div className='about'>
         <div className='HomeaboutText'>
@@ -12,7 +14,7 @@ export default function About() {
         <p className='Homeparagraph'>The two-day event will be a fun-filled extravaganza for kids and parents! It will feature a variety of activities such as competitions (Rubiks, Mental Maths, Supr Shark India), art and craft workshops, dance / music performances, games, as well as mental agility camps, talent competitions and more.</p>
         
         </div>
-        <Button variant="light">Know more</Button>{' '}
+        <Button onClick={() => navigate("/Event")} variant="light">Know more</Button>{' '}
         <div className='box'>
             <img className='boximg'src='https://ik.imagekit.io/suprkid/Groupbox.png'/>
         </div>

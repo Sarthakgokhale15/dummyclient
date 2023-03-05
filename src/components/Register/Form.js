@@ -83,7 +83,7 @@ function CustomForm() {
   return (
     // <div>hello</div>
     <div className="FormContainer">
-      <h1>Please Fill The Details To Register</h1>
+      <h2>Please Fill The Details To Register</h2>
       <form onSubmit={onSubmitHandler} className='Form' >
         <div className="form">
         <div className='col1'>
@@ -168,7 +168,7 @@ function CustomForm() {
         </div>
         </div>
         <div className="form-group btn">
-          <Button  onClick={onSubmitHandler} className="btn" type="submit" variant="danger">Submit</Button>{' '}
+          <Button  onClick={onSubmitHandler} className="btn" type="submit" variant="danger">Register</Button>{' '}
           
         </div>
       </form>

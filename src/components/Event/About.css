@@ -48,7 +48,7 @@
      flex-direction: column;
    
  }
- .paragraph2{
+ .AboutEventParagraph{
     color: #EF495E;
     font-weight: bold;
     /* font-size: 2vh; */
@@ -56,8 +56,26 @@
    font-size: 1.5vw;
    
  }
+ .AboutEventParagraph1{
+  color: #667085;
+  font-size: 20px;
+  line-height: 30px;
+ }
 
+ @media screen and (min-width: 900px){
+  .AbouEvent{
+    height: 180vh;
+  }
+  .AboutEventParagraph1{
+    width: 80vw;
+    text-align: center;
+  }
+ }
  @media screen and (max-width: 600px){
+  .AboutEventParagraph1{
+    width: 70vw;
+    line-height: 10px;
+  }
     .AbouEvent{
       height: 42vh;
     }
