@@ -11,8 +11,9 @@ import Alert from 'react-bootstrap/Alert';
 
 
 export default function CustomForm() {
+
   const navigate = useNavigate();
-  const [submit, setsubmit] = useState(false)
+  const [submit, setsubmit] = useState(true)
   const [categorySelected, setcategorySelected] = useState(false)
   const [genderVal, setgenderVal] = useState('')
   const [formData, setFormData] = useState({
@@ -105,6 +106,7 @@ export default function CustomForm() {
 
     if(res.status==200){
       navigate("/registrationSuccessful");
+      setsubmit(false);
     }
     console.log(res);
   }
@@ -219,7 +221,7 @@ export default function CustomForm() {
         </div>
         </div>
         <div className="form-group btn">
-          <Button  onClick={onSubmitHandler} className="btn"  variant="danger">Register</Button>{' '}
+          <Button  disabled={!submit}onClick={onSubmitHandler} className="btn"  variant="danger">Register</Button>{' '}
           
         </div>
       </form>

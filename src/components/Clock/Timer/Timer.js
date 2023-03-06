@@ -1,8 +1,8 @@
 import './Timer.css';
 import '../Clock.css'
 import React, { useState, useEffect } from "react";
-import Header from '/Users/sarthakgokhale/Desktop/dev-sarthak/demo/demo/src/components/Header/Header.js';
-import Clock from "/Users/sarthakgokhale/Desktop/dev-sarthak/demo/demo/src/components/Clock/Clock.js";
+import Header from '../../Header/Header';
+import Clock from "../Clock";
 
 
 
