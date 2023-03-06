@@ -102,10 +102,10 @@ export default function CustomForm() {
       
 
     };
-    const res= await axios.get("http://192.168.43.50:3001/",{
+    const res= await axios.post("https://super-legend-server.vercel.app/",{
        'Access-Control-Allow-Origin' : '*',
        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-       params:data
+       body:data
       
     })
 
