@@ -7,9 +7,10 @@ import validator from "validator";
 import {useForm} from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import Alert from 'react-bootstrap/Alert';
 
 
-function CustomForm() {
+export default function CustomForm() {
   const navigate = useNavigate();
   const [submit, setsubmit] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
@@ -22,6 +23,8 @@ function CustomForm() {
     Category: [],
     ContactNumber:'',
     Location:'',
+    jcaId:'No',
+    jcaIdNumber:''
   })
 
 
@@ -66,8 +69,11 @@ function CustomForm() {
   }
 
 
-  const onSubmitHandler = async(event) => {
-
+  const onSubmitHandler =  async(event) => {
+   
+    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='True'&&formData.jcaIdNumber===''){
+      return null;
+    }
     event.preventDefault()
     console.log(formData)
     setsubmit(true);
@@ -84,16 +90,22 @@ function CustomForm() {
       category2:category2,
       category3:category3,
       ContactNumber:formData.ContactNumber,
-      location:formData.Location
+      location:formData.Location,
+      jcaId:formData.jcaId,
+      jcaIdNumber:formData.jcaIdNumber
       
 
     };
-    const res=await axios.get("http://192.168.43.50:3001/",{
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-      params:data
+    const res= await axios.get("http://192.168.43.50:3001/",{
+       'Access-Control-Allow-Origin' : '*',
+       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+       params:data
       
     })
+
+    if(res.status==200){
+      navigate("/registrationSuccessful");
+    }
     console.log(res);
   }
   return (
@@ -126,6 +138,29 @@ function CustomForm() {
               </Form.Group>
               <div><span className='span'>Please select at least one category</span></div>
           </div>
+          {formData.Category.includes('Rubix Cube')?
+            <div className="form-group">
+                <label htmlFor="gender" className="form-label">Do you have valid jc id</label>
+                <div className='category'>
+              
+              <Form.Group >
+                <div key={`default-radio`} className="mb-3">
+                  <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
+                  <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
+
+                </div>
+              </Form.Group>
+              <div><span className='span'>Please select at least one option</span></div>
+          </div>
+          {formData.jcaId==="Yes"?
+          <div className="form-group">
+          <label htmlFor="jcaId" className="form-label">JCA Id</label>
+          <input className="form-control" name="jcaIdNumber" onChange={onChangeHandler} value={formData.jcaIdNumber}  required />
+          <span className='span'>Please enter valid jca id</span>
+          </div>
+          :<div></div>}
+
+                </div>:<div></div>}
           
           <div className="form-group">
           <label htmlFor="ContactNumber" className="form-label">Contact Number</label>
@@ -184,7 +219,7 @@ function CustomForm() {
         </div>
         </div>
         <div className="form-group btn">
-          <Button  onClick={onSubmitHandler} className="btn" type="submit" variant="danger">Register</Button>{' '}
+          <Button  onClick={onSubmitHandler} className="btn"  variant="danger">Register</Button>{' '}
           
         </div>
       </form>
@@ -192,6 +227,6 @@ function CustomForm() {
   );
 }
 
-export default CustomForm;
+
 
 

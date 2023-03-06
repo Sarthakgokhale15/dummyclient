@@ -1,7 +1,8 @@
 
 const express=require("express");
 const {google}=require("googleapis");
-var cors = require('cors')
+var cors = require('cors');
+const { query } = require("express");
 const app =express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +31,9 @@ app.get("/",async(req,res)=>{
 
 
     console.log(req.query.childName);
-    const payload=[[req.query.childName,req.query.Age,req.query.gender,req.query.parentName,req.query.category1,req.query.category2,req.query.category3,req.query.ContactNumber,req.query.location]];
+    const jcaIdNumber=req.query.jcaIdNumber;
+    console.log(jcaIdNumber);
+    const payload=[[req.query.childName,req.query.Age,req.query.gender,req.query.parentName,req.query.category1,req.query.category2,req.query.category3,req.query.ContactNumber,req.query.location,req.query.jcaId,req.query.jcaIdNumber]];
 
     await googleSheets.spreadsheets.values.append({
         auth,
