@@ -8,6 +8,7 @@ import {useForm} from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
+
 function CustomForm() {
   const navigate = useNavigate();
   const [submit, setsubmit] = useState(false)
@@ -65,20 +66,35 @@ function CustomForm() {
   }
 
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async(event) => {
 
     event.preventDefault()
     console.log(formData)
     setsubmit(true);
-    axios.get(`http://localhost:3001/api/v1/batch`).then((response) => {
-     console.log(response.status);
-    // if(response.status==200){
-    //   navigate("/registrationSuccessful");
-    //  }
-    });
 
-    navigate("/");
-    // axios post to database
+    let category1=formData.Category.includes('Rubix Cube');
+    let category2=formData.Category.includes('Mental Math');
+    let category3=formData.Category.includes('Super Tank');
+    const data = {
+      childName:formData.childName,
+      Age:formData.Age,
+      gender:formData.gender,
+      parentName:formData.parentName,
+      category1:category1,
+      category2:category2,
+      category3:category3,
+      ContactNumber:formData.ContactNumber,
+      location:formData.Location
+      
+
+    };
+    const res=await axios.get("http://192.168.43.50:3001/",{
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      params:data
+      
+    })
+    console.log(res);
   }
   return (
     // <div>hello</div>
@@ -177,3 +193,5 @@ function CustomForm() {
 }
 
 export default CustomForm;
+
+
