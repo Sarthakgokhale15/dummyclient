@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import PropTypes from 'prop-types';
-import CloseIcon from '@mui/icons-material/Close';
+// import CloseIcon from '@mui/icons-material/Close';
 import './Card.css'
 import Button from 'react-bootstrap/Button';
 
@@ -12,7 +12,7 @@ const Card = ({property,onClickCallback,img,text}) => {
         <div  id={`card-${index}`} className="card" style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',flexDirection:'column',backgroundColor:'white'}}>
         <div style={{height:'50%',width:'100%',display:'flex',alignItems:'center',justifyContent:'center'}}>
             
-            <button onClick={onClickCallback}><CloseIcon/></button>
+            <button onClick={onClickCallback}>X</button>
            
             
         </div>
