@@ -25,7 +25,8 @@ export default function CustomForm() {
     ContactNumber:'',
     Location:'',
     jcaId:'No',
-    jcaIdNumber:''
+    jcaIdNumber:'',
+    mentorName:'',
   })
 
 
@@ -72,7 +73,10 @@ export default function CustomForm() {
 
   const onSubmitHandler =  async(event) => {
    
-    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='True'&&formData.jcaIdNumber===''){
+    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='Yes'&& formData.jcaIdNumber===''){
+      return null;
+    }
+    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='Yes' && formData.mentorName===''){
       return null;
     }
     event.preventDefault()
@@ -93,7 +97,8 @@ export default function CustomForm() {
       ContactNumber:formData.ContactNumber,
       location:formData.Location,
       jcaId:formData.jcaId,
-      jcaIdNumber:formData.jcaIdNumber
+      jcaIdNumber:formData.jcaIdNumber,
+      mentorName:formData.mentorName
       
 
     };
@@ -155,11 +160,19 @@ export default function CustomForm() {
               <div><span className='span'>Please select at least one option</span></div>
           </div>
           {formData.jcaId==="Yes"?
-          <div className="form-group">
-          <label htmlFor="jcaId" className="form-label">JCA Id</label>
-          <input className="form-control" name="jcaIdNumber" onChange={onChangeHandler} value={formData.jcaIdNumber}  required />
-          <span className='span'>Please enter valid jca id</span>
-          </div>
+          <div>
+            <div className="form-group">
+            <label htmlFor="jcaId" className="form-label">JCA Id</label>
+            <input className="form-control" name="jcaIdNumber" onChange={onChangeHandler} value={formData.jcaIdNumber}  required />
+            <span className='span'>Please enter valid jca id</span>
+            
+            </div>
+            <div className="form-group">
+            <label htmlFor="mentorName" className="form-label">Mentor Name</label>
+            <input className="form-control" name="mentorName" onChange={onChangeHandler} value={formData.mentorName}  required />
+            <span className='span'>Please enter JCA Mentor Name</span>
+            </div>
+            </div>
           :<div></div>}
 
                 </div>:<div></div>}
