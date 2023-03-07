@@ -107,7 +107,7 @@ export default function CustomForm() {
     };
     // console.log("log working");
     // https://super-legend-server.vercel.app
-     await axios.post("https://super-legend-server.vercel.app/",{
+     await axios.post("https://super-legend-server-main.vercel.app/user",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
         // params:data
