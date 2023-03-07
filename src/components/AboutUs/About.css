@@ -1,4 +1,26 @@
+.AboutUs{
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
+  width: 100vw;
+    /* padding: 2rem; */
+
+   /* background-size: contain; */
+   background-image: url("https://ik.imagekit.io/suprkid/Vector-2-3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677477737438");
+   background-size: 180vh;
+   /* height: 50vh;  height for mobile screen*/ 
+   background-repeat: no-repeat;
+   height: 110vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-position: 10% 100%;
+   flex-direction: column;
+ 
+}
 .about {
     
   width: 100%;
@@ -34,6 +56,7 @@ h2{
   padding-top: 1rem;
 }
 .AboutUsParagraph{
+  padding-top: 5vh;
   width: 60%;
   /* font-size: 1.1vw; */
   color: #667085;
@@ -117,15 +140,19 @@ h2{
  flex-direction: column;
  text-align: center;
  margin-top: 1%;
+ padding-top:5vh;
 }
 
-
+.aboutUsImgBox1{
+  max-width: 50vw ;
+  max-height: 50vh ;
+}
 
 /* media queries for responsive designs */
 
 @media only screen and (max-width: 1400px) {
 
-
+  
  .about {
 
    background-size: 160vw; /* half image size on larger screens */
@@ -200,7 +227,20 @@ h2{
 }
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
+  .HomeaboutText{
+    padding-top:0vh;
+  }
+  .aboutusText{
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+  }
+ 
+  .AboutUs{
+    background-position: center top;
+    height: 60vh;
+    background-size: 70vh;
+  }
   .AboutUsParagraph{
   width: 80vw;
   line-height: 1.1;
@@ -219,6 +259,12 @@ h2{
   .ImgGroup{
     position: relative;
     /* max-height: 5vh; */
+  }
+  .aboutUsImgBox1{
+   
+    max-height: 10vh;
+    max-width: 20vw;
+
   }
  
   

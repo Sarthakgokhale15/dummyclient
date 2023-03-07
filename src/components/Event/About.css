@@ -9,17 +9,14 @@
 
  }
  .ImgGroup{
-   padding-top: 15vh;
+   padding-top: 10vh;
    display: flex;
    width: 100%;
    justify-content: space-between;
    align-items: center;
  }
- .ImgGroup .EventimgBox1{
-   max-width: 5vw;
-   padding-bottom: 10vh;
- }
- .ImgGroup .EventimgCone1{
+ 
+ .ImgGroup .EventimgCone1,.EventimgCone2{
    padding-left: 10vw;
    padding-top: 10vh;
    max-width: 50vw;
@@ -72,12 +69,24 @@
   }
  }
  @media screen and (max-width: 600px){
+  .ImgGroup .boxx{
+    max-width: 15vw !important;
+    /* padding-bottom: 20vh; */
+  }
+  .ImgGroup .conee1{
+    max-width: 25vw !important;
+    /* padding-bottom: 20vh; */
+  }
+  .ImgGroup .conee2{
+    max-width: 25vw !important;
+    padding-bottom: 5vh;
+  }
   .AboutEventParagraph1{
     width: 70vw;
     line-height: 10px;
   }
     .AbouEvent{
-      height: 42vh;
+      height: 110vh;
     }
     .AbouEvent img{
       
@@ -100,6 +109,7 @@
       max-width: 20vw;
       max-height: 30vh;
     }
+
 
 
    

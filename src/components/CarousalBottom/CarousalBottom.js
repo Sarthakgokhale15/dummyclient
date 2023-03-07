@@ -49,8 +49,8 @@ export default function CarousalBottom() {
 		<div className='HomeimgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div>
 		
 	<div className='Main'>
-		<div className='mainTitle' style={{display:'flex',width:'100%', justifyContent:'center'}}>
-			<h1>Whats In It For Us!</h1>
+		<div className='mainTitle' style={{display:'flex',width:'100%', justifyContent:'center',fontWeight:'bolder'}}>
+			<h1>Whats In It For You!</h1>
 		</div>
 		
         <div className='BtnGroup'>
@@ -65,7 +65,7 @@ export default function CarousalBottom() {
 			classNames="silde right-to-left"
 			key={slideNo} 
 		>
-	<div className='CarousalCardContent' style={{marginTop:'40vh'}}>
+	<div className='CarousalCardContent homecarousalCard' style={{marginTop:slideNo===1?'0vh':'1vh'}}>
 		
 		
 		<div className='CarousalCardItem'>
@@ -104,14 +104,15 @@ export default function CarousalBottom() {
 	</CSSTransition>	
 		</TransitionGroup>
 	</div>
-	<div style={{display:'flex',justifyContent:"center"}}><Button className='Reg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
+	<div className='dummy'></div>
+	<div style={{display:'flex',justifyContent:"center"}}><Button className='Reg Homereg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
 	
-	<div className='btn' style={{marginTop:'15vh'}}>
+	{/* <div className='btn' style={{marginTop:'15vh'}}> */}
 	{/* <Button onClick={() => navigate("/Event")} variant="danger">register Now</Button>{' '} */}
     
+	{/* </div> */}
 	</div>
-	</div>
-	<div className='imgCone2'><img src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/></div>
+	<div className='imgCone2 homecone'><img src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/></div>
 	</div>
 	
   )

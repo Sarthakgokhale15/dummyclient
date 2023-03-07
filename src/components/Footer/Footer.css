@@ -63,6 +63,10 @@
 }
 @media only screen and (max-width: 600px){
     .FooterBody{
-        padding-top: 15vh;
+        padding-top: 5vh;
+    }
+    .calculator{
+        top:50vh;
+        z-index: 2;
     }
 }

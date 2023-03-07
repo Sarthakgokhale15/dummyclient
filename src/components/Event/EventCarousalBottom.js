@@ -138,13 +138,18 @@ export default function EventCarousalBottom() {
 	const Btnstyles = (slideNo) => ({
 		marginTop: slideNo===2?'60vh':'80vh',
 		
+		
+	});
+	const mainCardStyles=(slideNo)=>({
+		top:slideNo===2?'50vh':'80vh',
+		paddingBottom:slideNo===0?'25vh':'0'
 	});
 	const changeSlide=(index)=>{	
 		setslideNo(index)
 	}
   return (
 	<div>
-	<div className='mainCard' style={{top:slideNo===2?'50vh':'90vh'}}>
+	<div className='mainCard' style={mainCardStyles(slideNo)}>
 
 		<div className='imgCone1' style={{marginBottom:'50vh'}}>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'40vh'}} src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/>
@@ -156,7 +161,7 @@ export default function EventCarousalBottom() {
 		</div>
 		
 
-	<div className='Main'>
+	<div className='Main EventCard'>
         <div className='BtnGroup' style={{bottom:slideNo===2?'30vh':'60vh'}}>
             <Button onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
@@ -169,7 +174,7 @@ export default function EventCarousalBottom() {
 			classNames="silde right-to-left"
 			key={slideNo} 
 		>
-	<div className='CarousalCardContent' style={{marginTop:slideNo===2?'30vh':'0',marginBottom:slideNo===0?'20vh':'0'}}>
+	<div className='CarousalCardContent eventCarousal' style={{marginTop:slideNo===2?'30vh':'0',marginBottom:slideNo===0?'20vh':'0'}}>
 		
 		<div className='CarousalCardItem'>
 			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
@@ -240,7 +245,7 @@ export default function EventCarousalBottom() {
 	
 	<div className='btn' style={Btnstyles(slideNo)} onClick={() => navigate("/register")}>
 	{/* <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '} */}
-    <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '}
+    {/* <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '} */}
 	
 	</div>
 	

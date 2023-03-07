@@ -120,11 +120,10 @@
     max-width: 15vw;
     max-height: 15vh;
 }
-.Reg{
-    
-    margin-top: 15vh;
-}
 
+.dummy{
+    height: 0;
+}
 @media only screen and (max-width: 1080px){
     .HomemainCard{
         width:60vw;
@@ -175,11 +174,23 @@
 }
 
 @media only screen and (max-width: 600px){
- 
+    .homecarousalCard{
+        margin-top: 40vh !important ;
+    }
+    .mainTitle{
+        padding-top: 5vh;
+    }
     .BtnGroup{
-       margin-top: 5vh;
+       margin-top: 1vh;
     }
     .BtnGroup Button{
         width: 100vw;
+    }
+    .Homereg{
+        /* position: relative !important; */
+        /* top:5vh !important; */
+    }
+    .dummy{
+        height: 15vh;
     }
 }

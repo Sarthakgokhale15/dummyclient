@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
+import { useNavigate } from "react-router-dom";
 function EventFooter() {
+    const navigate = useNavigate();
   return (
     <>
         <div className='EventFooterMain' >
@@ -15,6 +17,7 @@ function EventFooter() {
             
         
             <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'15vh'}}>
+                <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '}
                 <p style={{fontWeight:'bold'}}>Click below for Rules & Regulations</p>
                 <div className='regBtn' style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',}}>
                     <Button onClick={() => window.open("https://drive.google.com/file/d/1nX0wfSKav3DkwTTdRaip91XybOz5HZnu/view")} className='regBtn' variant="outline-secondary">Regulation</Button>{' '}

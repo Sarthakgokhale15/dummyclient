@@ -12,12 +12,18 @@
 }
 .EventFooterMain{
     position: relative;
-    top:50vh;
+    top:40vh;
 }
 
+@media only screen and (min-width: 900px){
+    .EventFooterMain{
+        position: relative;
+        top:20vh;
+    }
+}
 @media only screen and (max-width: 600px){
     .regBtn{
-        margin-top: 5vh;
+        /* margin-top: 5vh; */
     }
     .regBtn Button{
         max-width: 30vw;
@@ -25,6 +31,6 @@
         font-size: 7px;
     }
     .EventFooterMain{
-        margin-top: 40vh;
+        margin-top: 20vh;
     }
 }

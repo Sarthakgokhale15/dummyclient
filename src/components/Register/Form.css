@@ -18,6 +18,7 @@
     margin-bottom: 0.5rem;
     display: inline-block;
     font-weight: bold;
+    font-size: 2vh;
   }
   .form-control {
     display: block;
@@ -99,10 +100,11 @@
 input:invalid~span{
   display: block;
 }
+input::placeholder {
+  font: 14px sans-serif;
+}
 @media only screen and (min-width: 900px) {
-  input::placeholder {
-    font: 14px sans-serif;
-  }
+ 
   .form label{
     font-size: 14px;
     /* font-size: 1vh; */
@@ -122,12 +124,10 @@ input:invalid~span{
   }
  
 }
-/* @media only screen and (max-width: 600){
-  .FormContainer h1{
-    font-size: 400;
-  }
+@media only screen and (max-width: 600){
+ 
     .form label{
-    font-size: 1vw;
+    font-size: 1vw !important;
   }
   .form span{
     font-size: 1vw;
@@ -135,4 +135,4 @@ input:invalid~span{
   .form input{
     max-width: 30vw;
   }
-} */
+}

@@ -119,7 +119,14 @@ export default function CustomForm() {
       // },
        body:data
       
-    }).then(res=>console.log(res)).catch(e=>console.log(e));
+    }).then(res=>{
+      // console.log(res)
+      if(res.status==200){
+        setloading(false);
+        navigate("/registrationSuccessful");
+        // setsubmit(false);
+      }
+    }).catch(e=>console.log(e));
     // console.log("log working");
     // setloading(true);
     // if(res.status==200){
@@ -151,7 +158,7 @@ export default function CustomForm() {
             <div className='category'>
               
               <Form.Group >
-                <div key={`default-radio`} className="mb-3">
+                <div key={`default-radio`} className="mb-3 category" style={{fontSize:'2.2vh'}}>
                   <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Rubix Cube' label='Rubix Cube' inline onChange={onChangeHandler}/>
                   <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Mental Math' label='Mental Math' inline onChange={onChangeHandler}/>
                   <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Super Tank' label='Super Tank' inline onChange={onChangeHandler}/>
@@ -161,11 +168,11 @@ export default function CustomForm() {
           </div>
           {formData.Category.includes('Rubix Cube')?
             <div className="form-group">
-                <label htmlFor="gender" className="form-label">Do you have valid jc id</label>
+                <label htmlFor="gender" className="form-label">Do you have valid JCA Id</label>
                 <div className='category'>
               
               <Form.Group >
-                <div key={`default-radio`} className="mb-3">
+                <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
                   <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
                   <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
 
@@ -178,7 +185,7 @@ export default function CustomForm() {
             <div className="form-group">
             <label htmlFor="jcaId" className="form-label">JCA Id</label>
             <input className="form-control" name="jcaIdNumber" onChange={onChangeHandler} value={formData.jcaIdNumber}  required />
-            <span className='span'>Please enter valid jca id</span>
+            <span className='span'>Please enter valid JCA Id</span>
             
             </div>
             <div className="form-group">
@@ -208,7 +215,7 @@ export default function CustomForm() {
           <label htmlFor="gender" className="form-label">Gender</label>
           <div className='gender'>
             <Form.Group>
-              <div key={`default-radio`} className="mb-3">
+              <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
                 <Form.Check name='gender' type='radio' label='Male' value='Male' onChange={(e)=>{
                   setgenderVal('Male')
                   onChangeHandler(e,'Male');

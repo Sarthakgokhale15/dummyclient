@@ -47,6 +47,7 @@
   .slider .slide {
     height: 100px;
     width: 250px;
+
     
   }
   .sliderBox{
@@ -54,6 +55,11 @@
     position: relative;
     top: 8vh;
   }
+  .slide img{
+    border-radius: 5px;
+    /* border: 5px solid #bc2929; */
+  }
+  
   @media only screen and (max-width: 600px){
 
     .sliderBox{
@@ -72,5 +78,7 @@
     .slider{
       height: 150px;
     }
+    
+  
     
 }

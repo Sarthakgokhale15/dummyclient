@@ -6,16 +6,16 @@
     
      /* height: 50vh;  height for mobile screen*/ 
 
-     height: 160vh;
+     height: 120vh;
      display: flex;
      justify-content: flex-start;
      align-items: center;
      background-position: center top;
      flex-direction: column;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
     .bgImgContainer{
-        max-height: 10vh;
+        max-height: 20vh;
 
         position: relative;
         /* background-size: 150vw; */
