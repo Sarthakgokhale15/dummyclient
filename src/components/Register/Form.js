@@ -1,6 +1,8 @@
 import './Form.css';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import CircularProgress from '@mui/material/CircularProgress';
+
 import RadioBtn from './RadioBtn';
 import Form from 'react-bootstrap/Form';
 import validator from "validator";
@@ -14,6 +16,7 @@ export default function CustomForm() {
 
   const navigate = useNavigate();
   const [submit, setsubmit] = useState(true)
+  const [loading, setloading] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
   const [genderVal, setgenderVal] = useState('')
   const [formData, setFormData] = useState({
@@ -71,7 +74,7 @@ export default function CustomForm() {
   }
 
 
-  const onSubmitHandler =  async(event) => {
+   const onSubmitHandler =  async(event) => {
    
     if(formData.Category.includes('Rubix Cube') && formData.jcaId==='Yes'&& formData.jcaIdNumber===''){
       return null;
@@ -80,7 +83,7 @@ export default function CustomForm() {
       return null;
     }
     event.preventDefault()
-    console.log(formData)
+    // console.log(formData)
     setsubmit(true);
 
     let category1=formData.Category.includes('Rubix Cube');
@@ -102,24 +105,35 @@ export default function CustomForm() {
       
 
     };
-    const res= await axios.post("https://super-legend-server.vercel.app/",{
-       'Access-Control-Allow-Origin' : '*',
-       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+    // console.log("log working");
+    // https://super-legend-server.vercel.app
+     await axios.post("https://super-legend-server.vercel.app/",{
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+        // params:data
+      // headers:{
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Request-Headers": 'Content-Type, Authorization'
+
+      // },
        body:data
       
-    })
-
-    if(res.status==200){
-      navigate("/registrationSuccessful");
-      setsubmit(false);
-    }
-    console.log(res);
+    }).then(res=>console.log(res)).catch(e=>console.log(e));
+    // console.log("log working");
+    // setloading(true);
+    // if(res.status==200){
+    //   setloading(false);
+    //   // navigate("/registrationSuccessful");
+    //   // setsubmit(false);
+    // }
+    // console.log(res);
   }
   return (
     // <div>hello</div>
     <div className="FormContainer">
       <h2>Please Fill The Details To Register</h2>
-      <form onSubmit={onSubmitHandler} className='Form' >
+      <form onSubmit={onSubmitHandler} className='Form' method='POST' >
         <div className="form">
         <div className='col1'>
           <div className="form-group">
@@ -234,6 +248,7 @@ export default function CustomForm() {
         </div>
         </div>
         <div className="form-group btn">
+          {loading?<CircularProgress />:<div></div>}
           <Button  disabled={!submit}onClick={onSubmitHandler} className="btn"  variant="danger">Register</Button>{' '}
           
         </div>
