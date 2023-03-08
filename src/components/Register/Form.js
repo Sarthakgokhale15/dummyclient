@@ -15,7 +15,7 @@ import Alert from 'react-bootstrap/Alert';
 export default function CustomForm() {
 
   const navigate = useNavigate();
-  const [submit, setsubmit] = useState(true)
+  const [submit, setsubmit] = useState(false)
   const [loading, setloading] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
   const [genderVal, setgenderVal] = useState('')
@@ -27,9 +27,8 @@ export default function CustomForm() {
     Category: [],
     ContactNumber:'',
     Location:'',
-    jcaId:'No',
-    jcaIdNumber:'',
-    mentorName:'',
+    JcaMember:'No',
+    
   })
 
 
@@ -71,24 +70,25 @@ export default function CustomForm() {
         [event.target.name]: event.target.value
       }))
     }
+
+    // if(formData.childName!='' && formData.Age!='' && formData.gender!='' && formData.parentName!='' && formData.ContactNumber!='' && formData.Location!='' && formData.Category.length!=0 ){
+    //   setsubmit(true);
+    // }
+    // else{
+    //   setsubmit(false);
+    // }
   }
 
 
+
+
    const onSubmitHandler =  async(event) => {
-   
-    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='Yes'&& formData.jcaIdNumber===''){
-      return null;
-    }
-    if(formData.Category.includes('Rubix Cube') && formData.jcaId==='Yes' && formData.mentorName===''){
-      return null;
-    }
-    event.preventDefault()
-    // console.log(formData)
-    setsubmit(true);
+    event.preventDefault();
 
     let category1=formData.Category.includes('Rubix Cube');
     let category2=formData.Category.includes('Mental Math');
     let category3=formData.Category.includes('Super Tank');
+
     const data = {
       childName:formData.childName,
       Age:formData.Age,
@@ -99,46 +99,37 @@ export default function CustomForm() {
       category3:category3,
       ContactNumber:formData.ContactNumber,
       location:formData.Location,
-      jcaId:formData.jcaId,
-      jcaIdNumber:formData.jcaIdNumber,
-      mentorName:formData.mentorName
-      
+      JcaMember:formData.JcaMember,
 
     };
-    // console.log("log working");
+
+    setloading(true);
+
     // https://super-legend-server.vercel.app
      await axios.post("https://super-legend-server-main.vercel.app/user",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-        // params:data
-      // headers:{
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Origin": "*",
-      //     "Access-Control-Request-Headers": 'Content-Type, Authorization'
 
-      // },
        body:data
       
     }).then(res=>{
-      // console.log(res)
+
       if(res.status==200){
         setloading(false);
         navigate("/registrationSuccessful");
-        // setsubmit(false);
       }
-    }).catch(e=>console.log(e));
-    // console.log("log working");
-    // setloading(true);
-    // if(res.status==200){
-    //   setloading(false);
-    //   // navigate("/registrationSuccessful");
-    //   // setsubmit(false);
-    // }
-    // console.log(res);
+      
+    }).catch(e=>{
+      console.log(e);
+      return null;
+    });
+
+    setloading(false);
   }
   return (
-    // <div>hello</div>
+
     <div className="FormContainer">
+      {loading?<CircularProgress />:<div>
       <h2>Please Fill The Details To Register</h2>
       <form onSubmit={onSubmitHandler} className='Form' method='POST' >
         <div className="form">
@@ -166,7 +157,7 @@ export default function CustomForm() {
               </Form.Group>
               <div><span className='span'>Please select at least one category</span></div>
           </div>
-          {formData.Category.includes('Rubix Cube')?
+          {/* {formData.Category.includes('Rubix Cube')?
             <div className="form-group">
                 <label htmlFor="gender" className="form-label">Do you have valid JCA Id</label>
                 <div className='category'>
@@ -196,7 +187,7 @@ export default function CustomForm() {
             </div>
           :<div></div>}
 
-                </div>:<div></div>}
+                </div>:<div></div>} */}
           
           <div className="form-group">
           <label htmlFor="ContactNumber" className="form-label">Contact Number</label>
@@ -252,14 +243,29 @@ export default function CustomForm() {
           <input className="form-control" name="Location" onChange={onChangeHandler} value={formData.Location} placeholder="EG:Kurla" required/>
           <span className='span'>Please enter valid location</span>
         </div>
+       {formData.Category.includes('Rubix Cube')?<div className="form-group">
+       <label htmlFor="gender" className="form-label">Are you a JCA Member</label>
+                <div className='category'>
+              
+              <Form.Group >
+                <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
+                  <Form.Check  required={!categorySelected} name="JcaMember" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
+                  <Form.Check  required={!categorySelected} name="JcaMember" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
+
+                </div>
+              </Form.Group>
+              <div><span className='span'>Please select at least one option</span></div></div>
+        </div>:<div></div>}
         </div>
         </div>
         <div className="form-group btn">
-          {loading?<CircularProgress />:<div></div>}
-          <Button  disabled={!submit}onClick={onSubmitHandler} className="btn"  variant="danger">Register</Button>{' '}
+          
+
+          <Button  onClick={onSubmitHandler}  className="btn"  variant="danger">Register</Button>{' '}
           
         </div>
       </form>
+      </div>}
     </div>
   );
 }
