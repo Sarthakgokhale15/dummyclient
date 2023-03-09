@@ -7,7 +7,7 @@ function About() {
         <div className='aboutText'>
           <h2>About the event</h2>
           <p className='AboutEventParagraph1'>The two-day event will be a fun-filled extravaganza for kids and parents! It will feature a variety of activities such as competitions (Rubiks, Mental Maths, Supr Shark India), art and craft workshops, dance / music performances, games, as well as mental agility camps, talent competitions and more.</p>
-          <p className='AboutEventParagraph'>Event Date: 28th & 29th April 2023(Saturday & Sunday) <br></br>Timings: 8 AM Onwards <br></br>Venue: Phoniex Market City Mall , Kurla , Mumbai</p>
+          <p className='AboutEventParagraph'>Event Date: 28th & 29th April 2023(Saturday & Sunday) <br></br>Timings: 8 AM Onwards <br></br>Venue: Phoenix Market City Mall , Kurla , Mumbai</p>
 
         </div>
         <div className='ImgGroup'>
