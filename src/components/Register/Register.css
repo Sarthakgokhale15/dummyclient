@@ -14,10 +14,14 @@
      background-position: center top;
      flex-direction: column;
    }
+   /* .Form1{
+    width: 100%s;
+   } */
    .register{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
    }
   .cloud1{
     width: 100vw;

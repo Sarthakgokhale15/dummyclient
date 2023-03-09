@@ -8,6 +8,7 @@ import './App.css'
 import CarousalBottom from './components/CarousalBottom/CarousalBottom'
 import Footer from './components/Footer/Footer'
 import DownloadBrochure from './components/Home/DownloadBrochure'
+import './assets/Fonts/Montserrat/static/Montserrat-SemiBold.ttf'
 function App() {
   return (
     <div>

@@ -13,6 +13,7 @@ function AboutUs() {
         
         <AboutCardGroup />
         
+        
     </div>
   )
 }

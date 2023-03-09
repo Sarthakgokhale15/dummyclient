@@ -8,8 +8,9 @@ import AfterRegister from './components/Register/AfterRegister/AfterRegister'
 import Event from './components/Event/Event'
 import AboutUs from './components/AboutUs/AboutUs';
 import About from './components/Home/About';
-
+import PartnerForm from './components/PartnerForm/PartnerForm';
 import {Route,Routes,BrowserRouter} from 'react-router-dom';
+import AfterSubmit from './components/PartnerForm/AfterSubmit'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -20,6 +21,8 @@ root.render(
         <Route path='/registrationSuccessful' element={<AfterRegister/>}/>
         <Route path='/Aboutus' element={<AboutUs/>}/>
         <Route path='/Event' element={<Event/>}/>
+        <Route path='/PartnerWithUs' element={<PartnerForm/>}/>
+        <Route path='/AfterSubmit' element={<AfterSubmit/>}/>
       </Routes>
    </BrowserRouter>
     

@@ -1,5 +1,10 @@
+
+@font-face {
+  font-family: 'Montserrat' !important;
+  src: local("Montserrat-SemiBold"),url(./assets/Fonts/Montserrat/static/Montserrat-SemiBold.ttf) format("truetype") !important;
+}
 body{
-  font-family: Inter, sans-serif;
+  font-family: "SemiBold";
 }
 .Homeplane2{
 

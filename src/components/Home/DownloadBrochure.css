@@ -2,8 +2,9 @@
     position: fixed;
     top: 50%;
     right: 0;
-    transform:translateX(40%) translateY(-50%) rotate(90deg);
+    transform:translateX(45%) translateY(-50%) rotate(90deg);
     z-index: 5;
+    /* left:1; */
     background-color: black;
 
   }

@@ -3,6 +3,7 @@ import './EventFooter.css'
 import Button from 'react-bootstrap/Button';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import OverlayCardFooter from '../OverlayCardFooter/OverlayCardFooter'
 
 import { useNavigate } from "react-router-dom";
 function EventFooter() {
@@ -18,19 +19,24 @@ function EventFooter() {
         
             <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'15vh'}}>
                 <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '}
-                <p style={{fontWeight:'bold'}}>Click below for Rules & Regulations</p>
+                <p style={{fontWeight:'bold',paddingTop:'5vh'}}>Click below to download for Rules & Regulations</p>
                 <div className='regBtn' style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',}}>
-                    <Button onClick={() => window.open("https://drive.google.com/file/d/1nX0wfSKav3DkwTTdRaip91XybOz5HZnu/view")} className='regBtn' variant="outline-secondary">Regulation</Button>{' '}
-                    <Button onClick={() => window.open("https://drive.google.com/file/d/1wenOHVkZlIzFhOpi1uOnFWD8UGIg9fVB/view")} className='regBtn' variant="outline-secondary">Offline Competition Rules</Button>{' '}
-                    <Button onClick={() => window.open("https://www.youtube.com/playlist?list=PLU9tNOmRgaYFIuc-FEiTliWlZNx-UqRj0")} className='regBtn' variant="outline-secondary">Watch Scrambling Videos</Button>{' '}
+                    <Button onClick={() => window.open("https://drive.google.com/file/d/1J5GoLwBNx6nxm1ZPm1n5rxkrLtYHFFza/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprCuber Rules & Regulations</Button>{' '}
+                    <Button onClick={()=>window.open("https://drive.google.com/file/d/1dcO-C5CcABrvbfzVFtRYw2Imr3YcSFa3/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprGenius Rules & Regulations</Button>{' '}
+                    <Button onClick={() => window.open("https://docs.google.com/document/d/1F-Gsyqy7QJ7Ys_D5p-zUtXIjW_XLhba5c89K1gAXSU0/edit?usp=sharing")} className='regBtn' variant="outline-secondary">SuprFounder Jr Rules & Regulations</Button>{' '}
                 </div>
             </div>
-            <div style={{position:'relative',top:'10vh',width:'100vw',display:'flex',alignItems:'flex-start',zIndex:1}}>
+            <div className='calc' style={{position:'relative',top:'10vh',width:'100vw',display:'flex',alignItems:'flex-start',zIndex:1}}>
                 <img style={{maxWidth:'100vw',maxHeight:'100vh'}}src='https://ik.imagekit.io/suprkid/Framefooter1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677336550468'/>
             
             </div>
-             <img style={{position:'relative',maxWidth:'100vw',zIndex:2}} src='https://ik.imagekit.io/suprkid/CTA_section.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677853015317'/>
-            <Header bgcolor={'#152D5A'} color={'white'} expand={false}/>
+            <div style={{ position: 'relative' }}>
+            <img style={{position:'relative',maxWidth:'100vw',zIndex:2}} src='https://ik.imagekit.io/suprkid/BG_GADEN.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678339215345'/>
+                <div style={{ position: 'absolute', bottom: 0, width: '100%' ,zIndex:4}}>
+                    <OverlayCardFooter />
+                </div>
+            </div>
+            <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true}/>
         </div>
         
         

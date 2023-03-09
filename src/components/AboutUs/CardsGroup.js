@@ -2,7 +2,7 @@ import React from "react";
 import './CardsGroup.css'
 import Col from 'react-bootstrap/Col';
 import Header from '../Header/Header'
-
+import OverlayCardFooter from '../OverlayCardFooter/OverlayCardFooter'
 
 
 function AboutCardsGroup() {
@@ -49,9 +49,15 @@ function AboutCardsGroup() {
         description="Suprmom focuses on making fitness a lifestyle for moms rather then just a season. It organises events, workshops, etc. exclusively for moms to live a healthy and fun lifestyle"
       />
     </div>
-    <img style={{position:'relative',maxWidth:'100vw',zIndex:2}} src='https://ik.imagekit.io/suprkid/CTA_section.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677853015317'/>
-    <Header bgcolor={'#152D5A'} color={'white'} expand={false}/>
+    <div style={{ position: 'relative' }}>
+            <img style={{position:'relative',maxWidth:'100vw',zIndex:2}} src='https://ik.imagekit.io/suprkid/BG_GADEN.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678339215345'/>
+                <div style={{ position: 'absolute', bottom: 0, width: '100%' ,zIndex:4}}>
+                    <OverlayCardFooter />
+                </div>
+            </div>
+            <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true}/>
     </div>
+
     
   );
 }

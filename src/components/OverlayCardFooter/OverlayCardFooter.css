@@ -1,0 +1,24 @@
+.footerOverlayCard{
+    border-radius: 1vh;
+    background-color: #D53457;
+    height: 17vh;
+    /* position: overlay; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4vw;
+    width: 80vw;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 600px){
+    .footerOverlayCard{
+        font-size: 1.2vh
+    }
+    .footerOverlayCard button{
+       font-size: 1.2vh;
+    }
+
+}
