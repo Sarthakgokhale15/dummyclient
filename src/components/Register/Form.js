@@ -51,7 +51,9 @@ export default function CustomForm() {
 
 const validateForm=()=>{
  
-
+  if(!formData.CubeCat.includes('3X3X3')){
+      return false;
+  }
   if(formData.name===''|| formData.Category.length===0 || ContactNumber==='+91 ' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
     return false;
   }
@@ -317,7 +319,7 @@ const validateForm=()=>{
                 
                 <Form.Group >
                   <div key={`default-radio4`} className="mb-3 category " style={{fontSize:'2.2vh',display:'flex',flexDirection:'row'}}>
-                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='3X3X3' label='3X3X3'  onChange={onChangeHandler}/>
+                    <Form.Check  required name="eventCubeCategory" type='checkbox' value='3X3X3' label='3X3X3'  onChange={onChangeHandler}/>
                     <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='2X2X2' label='2X2X2'  onChange={onChangeHandler}/>
                     <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='4X4X4' label='4X4X4'  onChange={onChangeHandler}/>
                   </div>

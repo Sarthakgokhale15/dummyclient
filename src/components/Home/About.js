@@ -18,7 +18,7 @@ export default function About() {
         <div className='box'>
             <img className='boximg'src='https://ik.imagekit.io/suprkid/Groupbox.png'/>
         </div>
-        <h2 className='aboutBody'>About Competition</h2>
+        <h2 className='aboutBody'>Competitions</h2>
         <div className='box2'><img className='box2img' src='https://ik.imagekit.io/suprkid/Group-4.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677505845780'/></div>
         <div className='clouds'>
               {/* <div><img className='cloud11' src='https://ik.imagekit.io/suprkid/Vectorcloud.png'/></div> */}
