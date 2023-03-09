@@ -56,7 +56,7 @@ function FormPartner() {
     //    console.log(email);
     //    console.log(ContactNumber);
         const data=[brandName,brandRepName,email,ContactNumber];
-    await axios.post("http://192.168.43.92:3001/partner",{
+    await axios.post("https://super-legend-server-main.vercel.app/partner",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
 
