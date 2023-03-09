@@ -167,7 +167,7 @@ export default function EventCarousalBottom() {
             <Button style={ {backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}}  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  style={ {backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
         </div>	
-	<div className='bottomCard' style={{marginTop:slideNo===0?'40vh':'0'}}>
+	<div className='bottomCard' style={{marginTop:slideNo===0?'45vh':'0'}}>
 	<TransitionGroup>
 		<CSSTransition 
 			timeout={100}

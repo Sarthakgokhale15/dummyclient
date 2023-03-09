@@ -15,6 +15,7 @@ import Alert from 'react-bootstrap/Alert';
 export default function CustomForm() {
 
   const navigate = useNavigate();
+  const [date, setDate] = useState(new Date());
   const [submit, setsubmit] = useState(false)
   const [loading, setloading] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
@@ -49,15 +50,9 @@ export default function CustomForm() {
 
 
 const validateForm=()=>{
-  const regexPattern = new RegExp("[A-Za-z]+");
-  if(regexPattern.test(formData.childName)){
-    console.log("input child name is valid");
-  }
-  else{
-    console.log("input child name is invalid");
-  }
+ 
 
-  if(formData.name==='' || formData.Age==='' || formData.Category.length===0 || ContactNumber==='+91 ' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
+  if(formData.name===''|| formData.Category.length===0 || ContactNumber==='+91 ' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
     return false;
   }
   if(ContactNumber.length!=14){
@@ -152,7 +147,7 @@ const validateForm=()=>{
       alert("Form has errors.");
       return;
      }
-
+     console.log(date)
     // if(formData.childName==='' || formData.Age==='' || formData.parentName==' '|| )
     event.preventDefault();
 
@@ -226,6 +221,15 @@ const validateForm=()=>{
             <input className="form-control" name="Age" onChange={onChangeHandler} value={formData.Age} placeholder="8-15" required />
             <span className='span'>Age must be in 8-15  </span>
             </div>
+            {/* <Form.Group controlId="duedate">
+              <Form.Control
+                type="date"
+                name="duedate"
+                placeholder="Due date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </Form.Group> */}
           <div className="form-group">
             <label htmlFor="gender" className="form-label">Which category you would like to participate</label>
             <div className='category'>
