@@ -24,6 +24,13 @@ function LogoSlider() {
 			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198902686"  height="60" width="120" alt="" />
 		</div>
 		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/PMCK_Logo-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283596597"  height="60" width="120" alt="" />
+		</div>
+		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/DS_logo__1_-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283598470"  height="60" width="120" alt="" />
+		</div>
+
+		<div className="slide">
 			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198899223"  height="60" width="120" alt="" />
 		</div>
 		<div className="slide">
@@ -39,6 +46,12 @@ function LogoSlider() {
 			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198902686"  height="60" width="120" alt="" />
 		</div>
 		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/PMCK_Logo-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283596597"  height="60" width="120" alt="" />
+		</div>
+		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/DS_logo__1_-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283598470"  height="60" width="120" alt="" />
+		</div>
+		<div className="slide">
 			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198899223"  height="60" width="120" alt="" />
 		</div>
 		<div className="slide">
@@ -52,6 +65,12 @@ function LogoSlider() {
 		</div>
 		<div className="slide">
 			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198902686"  height="60" width="120" alt="" />
+		</div>
+		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/PMCK_Logo-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283596597"  height="60" width="120" alt="" />
+		</div>
+		<div className="slide">
+			<img src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/DS_logo__1_-1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678283598470"  height="60" width="120" alt="" />
 		</div>
 		
 		</div>

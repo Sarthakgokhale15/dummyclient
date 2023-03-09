@@ -33,7 +33,7 @@
  .card__description {
      color:#667085;
 	 padding: 0 3vw;
-     font-size: smaller;
+     /* font-size: smaller; */
 
 }
  .card__btn {
@@ -61,7 +61,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.cardAbout{
+	overflow-y: auto;
+}
 @media only screen and (min-width: 1440px){
 	.wrapper{
 		grid-template-columns: repeat(auto-fit,minmax(20rem, 20rem));
@@ -75,9 +77,11 @@
 		font-size: 1.7vh;
 	}
 }
-	
+.AboutBrands h2{
+	font-size: 6vh;
+}
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
 	.wrapper{
 		grid-template-columns: repeat(auto-fit) !important;
 		
@@ -91,7 +95,7 @@
 		max-height: 30vh;
 	}
 	.cardAbout p{ 
-		font-size: 1.7vh;
+		font-size: 1.7vh !important;
 	}
 
 

@@ -171,6 +171,9 @@
         margin-top: 10vh;
         
     }
+    .Homereg{
+        width: 25vw;
+    }
 }
 
 @media only screen and (max-width: 600px){
@@ -187,10 +190,14 @@
         width: 100vw;
     }
     .Homereg{
-        /* position: relative !important; */
-        /* top:5vh !important; */
+        
+        /* width: 5vw; */
     }
     .dummy{
         height: 15vh;
     }
+    .homeRegBtnParent{
+        padding-bottom: 23vh;
+    }
+
 }

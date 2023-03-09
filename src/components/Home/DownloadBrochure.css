@@ -1,0 +1,22 @@
+.download-brochure {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform:translateX(40%) translateY(-50%) rotate(90deg);
+    z-index: 5;
+    background-color: black;
+
+  }
+  .download-brochure Button{
+    cursor: pointer;
+  }
+  
+  .download-brochure-btn {
+    padding: 10px 20px;
+    background-color: #2D2D2D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    /* cursor: pointer ; */
+  }
+  

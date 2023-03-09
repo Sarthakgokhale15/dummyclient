@@ -44,6 +44,13 @@ export default function CarousalBottom() {
 	const changeSlide=(index)=>{	
 		setslideNo(index)
 	}
+	// const HomeBtnstyles = (slideNo) => (`.carousalBottomBtn${slideNo}`{
+		
+		
+		
+	// });
+
+
   return (
 	<div className='HomemainCard'>
 		<div className='HomeimgCone1'><img src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/></div>
@@ -54,9 +61,9 @@ export default function CarousalBottom() {
 		</div>
 		
         <div className='BtnGroup'>
-            <Button  onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
-            <Button  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
-            <Button  onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
+            <Button  style={ {backgroundColor:slideNo===0?'red':'',color:slideNo===0?'white':''}} className={`carousalBottomBtn0`} onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
+            <Button  style={{backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}} className={`carousalBottomBtn1`} onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
+            <Button  style={{backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} className={`carousalBottomBtn1`} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
         </div>	
 	<div className='bottomCard'>
 	<TransitionGroup>
@@ -65,7 +72,7 @@ export default function CarousalBottom() {
 			classNames="silde right-to-left"
 			key={slideNo} 
 		>
-	<div className='CarousalCardContent homecarousalCard' style={{marginTop:slideNo===1?'0vh':'1vh'}}>
+	<div className='CarousalCardContent homecarousalCard' style={{marginTop:slideNo===1?'0vh':'1vh',color:(slideNo===0 || slideNo===1 || slideNo===2)?'#03265A':''}}>
 		
 		
 		<div className='CarousalCardItem'>
@@ -104,8 +111,9 @@ export default function CarousalBottom() {
 	</CSSTransition>	
 		</TransitionGroup>
 	</div>
+
 	<div className='dummy'></div>
-	<div style={{display:'flex',justifyContent:"center"}}><Button className='Reg Homereg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
+	<div className='homeRegBtnParent' style={{display:'flex',justifyContent:"center"}}><Button  className='Reg Homereg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
 	
 	{/* <div className='btn' style={{marginTop:'15vh'}}> */}
 	{/* <Button onClick={() => navigate("/Event")} variant="danger">register Now</Button>{' '} */}

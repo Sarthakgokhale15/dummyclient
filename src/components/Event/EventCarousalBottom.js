@@ -9,7 +9,7 @@ import { display } from '@mui/system';
 export default function EventCarousalBottom() {
 	const navigate = useNavigate();
 	const [slideNo, setslideNo] = useState(0);
-	const arr=['Cube Competition','Mental Math Competition','Super Shark'];
+	const arr=['SuprCuber','SuprGenius','SuprFounder Jr'];
 	const data=[
 
 			
@@ -163,9 +163,9 @@ export default function EventCarousalBottom() {
 
 	<div className='Main EventCard'>
         <div className='BtnGroup' style={{bottom:slideNo===2?'30vh':'60vh'}}>
-            <Button onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
-            <Button  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
-            <Button  onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
+            <Button style={ {backgroundColor:slideNo===0?'red':'',color:slideNo===0?'white':''}} onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
+            <Button style={ {backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}}  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
+            <Button  style={ {backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
         </div>	
 	<div className='bottomCard' style={{marginTop:slideNo===0?'40vh':'0'}}>
 	<TransitionGroup>
@@ -203,6 +203,7 @@ export default function EventCarousalBottom() {
 				
 			</div>
 			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
+				<div style={{height:slideNo===0?'2vh':'0'}}></div>
 				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][3].title1}</p>}
 				{data[slideNo][3].Description1.split('\n').map(i => {
     				return <p className='desc'>{i}</p>

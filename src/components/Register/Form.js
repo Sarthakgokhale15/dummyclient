@@ -18,7 +18,8 @@ export default function CustomForm() {
   const [submit, setsubmit] = useState(false)
   const [loading, setloading] = useState(false)
   const [categorySelected, setcategorySelected] = useState(false)
-  const [genderVal, setgenderVal] = useState('')
+  const [eventCubeCategorySelected, seteventCubeCategorySelected] = useState(false)
+  const [genderSelected, setgenderSelected] = useState(false)
   const [formData, setFormData] = useState({
     childName: '',
     parentName: '',
@@ -27,37 +28,80 @@ export default function CustomForm() {
     Category: [],
     ContactNumber:'',
     Location:'',
-    JcaMember:'No',
+    JcaMember:'',
+    CubeCat:[],
     
   })
 
-
+const validateForm=()=>{
+  if(formData.name==='' || formData.Age==='' || formData.Category.length===0 || formData.ContactNumber==='' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
+    return false;
+  }
+  if(formData.Category.includes('SuprCuber') && formData.CubeCat.length===0){
+    return false;
+  }
+  if(formData.Category.includes('SuprCuber') && formData.JcaMember===''){
+    return false;
+  }
+  return true;
+}
 
 
   const onChangeHandler = (event) => {
-    let val=event.target.value
+     
 
-    // console.log(event)
-    if (event.target.name==='gender'){
+
+
+    let val=event.target.value
+    if(event.target.name==='eventCubeCategory'){
+      console.log(event.target.name);
+      console.log("working");
+      let copy={ ...formData }
+      if (event.target.checked) {
+        copy.CubeCat.push(event.target.value)
+        seteventCubeCategorySelected(true);
+      } else {
+        
+        copy.CubeCat = copy.CubeCat.filter(el => el !== event.target.value)
+        if(copy.CubeCat.length===0){
+          seteventCubeCategorySelected(false);
+        }
+        // else{seteventCubeCategorySelected(true);}
+        
+      }
+      // console.log(copy)
+      setFormData(copy)
+    }
+
+   
+    else if (event.target.name==='gender'){
       let copy = { ...formData }
 
       if (event.target.checked) {
+        setgenderSelected(true);
         copy.gender=val;
       } 
+      else{
+        setgenderSelected(false);
+      }
 
       setFormData(copy)
     }
     else if (event.target.name === 'Category') {
       
 
+
       let copy = { ...formData }
 
       if (event.target.checked) {
         copy.Category.push(val)
-        setcategorySelected(categorySelected|true);
+        setcategorySelected(true);
       } else {
-        setcategorySelected(categorySelected|false);
+       
         copy.Category = copy.Category.filter(el => el !== event.target.value)
+        if(copy.Category.length===0){
+          setcategorySelected(false);
+        }
       }
       // console.log(copy)
       setFormData(copy)
@@ -71,23 +115,24 @@ export default function CustomForm() {
       }))
     }
 
-    // if(formData.childName!='' && formData.Age!='' && formData.gender!='' && formData.parentName!='' && formData.ContactNumber!='' && formData.Location!='' && formData.Category.length!=0 ){
-    //   setsubmit(true);
-    // }
-    // else{
-    //   setsubmit(false);
-    // }
+   
   }
 
 
 
 
    const onSubmitHandler =  async(event) => {
+    if(!validateForm()){
+      alert("Form has errors.");
+      return;
+     }
+
+    // if(formData.childName==='' || formData.Age==='' || formData.parentName==' '|| )
     event.preventDefault();
 
-    let category1=formData.Category.includes('Rubix Cube');
-    let category2=formData.Category.includes('Mental Math');
-    let category3=formData.Category.includes('Super Tank');
+    let category1=formData.Category.includes('SuprCuber');
+    let category2=formData.Category.includes('SuprGenius');
+    let category3=formData.Category.includes('SuprFounder Jr');
 
     const data = {
       childName:formData.childName,
@@ -100,13 +145,24 @@ export default function CustomForm() {
       ContactNumber:formData.ContactNumber,
       location:formData.Location,
       JcaMember:formData.JcaMember,
+      cat1:formData.CubeCat.includes('3X3X3'),
+      cat2:formData.CubeCat.includes('2X2X2'),
+      cat3:formData.CubeCat.includes('4X4X4'),
+      cat4:formData.CubeCat.includes('Skewb'),
+      cat5:formData.CubeCat.includes('Mirror'),
+      cat6:formData.CubeCat.includes('Pyraminx'),
+      cat7:formData.CubeCat.includes('Parents 3X3X3'),
+      cat8:formData.CubeCat.includes('Mosaic'),
+      cat9:formData.CubeCat.includes('Clock'),
+      cat10:formData.CubeCat.includes('High IQ'),
 
     };
-
+    console.log(data);
+    console.log(formData.CubeCat);
     setloading(true);
 
-    // https://super-legend-server.vercel.app
-     await axios.post("https://super-legend-server-main.vercel.app/user",{
+    // https://super-legend-server-main.vercel.app
+     await axios.post("http://192.168.43.92:3001/user",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
 
@@ -148,46 +204,15 @@ export default function CustomForm() {
             <label htmlFor="gender" className="form-label">Which category you would like to participate</label>
             <div className='category'>
               
-              <Form.Group >
-                <div key={`default-radio`} className="mb-3 category" style={{fontSize:'2.2vh'}}>
-                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Rubix Cube' label='Rubix Cube' inline onChange={onChangeHandler}/>
-                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Mental Math' label='Mental Math' inline onChange={onChangeHandler}/>
-                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='Super Tank' label='Super Tank' inline onChange={onChangeHandler}/>
+              <Form.Group required={formData.Category.length!==0}>
+                <div key={`default-radio1`} className="mb-3 category" style={{fontSize:'2.2vh'}}>
+                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='SuprCuber' label='SuprCuber' inline onChange={onChangeHandler}/>
+                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='SuprGenius' label='SuprGenius' inline onChange={onChangeHandler}/>
+                  <Form.Check  required={!categorySelected} name="Category" type='checkbox' value='SuprFounder Jr' label='SuprFounder Jr' inline onChange={onChangeHandler}/>
                 </div>
               </Form.Group>
               <div><span className='span'>Please select at least one category</span></div>
           </div>
-          {/* {formData.Category.includes('Rubix Cube')?
-            <div className="form-group">
-                <label htmlFor="gender" className="form-label">Do you have valid JCA Id</label>
-                <div className='category'>
-              
-              <Form.Group >
-                <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
-                  <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
-                  <Form.Check  required={!categorySelected} name="jcaId" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
-
-                </div>
-              </Form.Group>
-              <div><span className='span'>Please select at least one option</span></div>
-          </div>
-          {formData.jcaId==="Yes"?
-          <div>
-            <div className="form-group">
-            <label htmlFor="jcaId" className="form-label">JCA Id</label>
-            <input className="form-control" name="jcaIdNumber" onChange={onChangeHandler} value={formData.jcaIdNumber}  required />
-            <span className='span'>Please enter valid JCA Id</span>
-            
-            </div>
-            <div className="form-group">
-            <label htmlFor="mentorName" className="form-label">Mentor Name</label>
-            <input className="form-control" name="mentorName" onChange={onChangeHandler} value={formData.mentorName}  required />
-            <span className='span'>Please enter JCA Mentor Name</span>
-            </div>
-            </div>
-          :<div></div>}
-
-                </div>:<div></div>} */}
           
           <div className="form-group">
           <label htmlFor="ContactNumber" className="form-label">Contact Number</label>
@@ -206,9 +231,9 @@ export default function CustomForm() {
           <label htmlFor="gender" className="form-label">Gender</label>
           <div className='gender'>
             <Form.Group>
-              <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
+              <div key={`default-radio2`} className="mb-3" style={{fontSize:'2.2vh'}}>
                 <Form.Check name='gender' type='radio' label='Male' value='Male' onChange={(e)=>{
-                  setgenderVal('Male')
+                  setgenderSelected(true)
                   onChangeHandler(e,'Male');
                   
                   }}
@@ -218,8 +243,8 @@ export default function CustomForm() {
                 />
 
 
-                <Form.Check name='gender' type='radio' label='Female' value='Female' onChange={(e)=>{
-                  setgenderVal('Female')
+                <Form.Check  name='gender' type='radio' label='Female' value='Female' onChange={(e)=>{
+                  setgenderSelected(true)
                   onChangeHandler(e,'Female');
 
                   }}
@@ -227,7 +252,7 @@ export default function CustomForm() {
                   required
                 />
                 <Form.Check name='gender' type='radio' label='Other' value='Other' onChange={(e)=>{
-                  setgenderVal('Other')
+                  setgenderSelected(true)
                   onChangeHandler(e,'Other');
 
                   }}
@@ -243,27 +268,61 @@ export default function CustomForm() {
           <input className="form-control" name="Location" onChange={onChangeHandler} value={formData.Location} placeholder="EG:Kurla" required/>
           <span className='span'>Please enter valid location</span>
         </div>
-       {formData.Category.includes('Rubix Cube')?<div className="form-group">
-       <label htmlFor="gender" className="form-label">Are you a JCA Member</label>
-                <div className='category'>
-              
-              <Form.Group >
-                <div key={`default-radio`} className="mb-3" style={{fontSize:'2.2vh'}}>
-                  <Form.Check  required={!categorySelected} name="JcaMember" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
-                  <Form.Check  required={!categorySelected} name="JcaMember" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
+          {formData.Category.includes('SuprCuber')?<div className="form-group">
+          <label htmlFor="gender" className="form-label">Are you a JCA Member</label>
+                    <div className='category'>
+                  
+                  <Form.Group >
+                    <div key={`default-radio3`} className="mb-3" style={{fontSize:'2.2vh'}}>
+                      <Form.Check   required name="JcaMember" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
+                      <Form.Check   required name="JcaMember" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
 
-                </div>
-              </Form.Group>
-              <div><span className='span'>Please select at least one option</span></div></div>
-        </div>:<div></div>}
+                    </div>
+                  </Form.Group>
+                  <div><span className='span'>Please select at least one option</span></div></div>
+            </div>:<div></div>}
+           { formData.Category.includes('SuprCuber')?<div className="form-group" >
+              <label htmlFor="cubeCat" className="form-label">Which category you would like to participate</label>
+              <div className='category'>
+                
+                <Form.Group >
+                  <div key={`default-radio4`} className="mb-3 category " style={{fontSize:'2.2vh',display:'flex',flexDirection:'row'}}>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='3X3X3' label='3X3X3'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='2X2X2' label='2X2X2'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='4X4X4' label='4X4X4'  onChange={onChangeHandler}/>
+                  </div>
+               
+                  <div key={`default-radio5`} className="mb-3 category" style={{fontSize:'2.2vh',display:'flex',flexDirection:'row'}}>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Skewb' label='Skewb'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Mirror' label='Mirror'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Pyraminx' label='Pyraminx'  onChange={onChangeHandler}/>
+                  </div>
+              
+                  <div key={`default-radio6`} className="mb-3 category" style={{fontSize:'2.2vh',display:'flex',flexDirection:'row'}}>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Parents 3X3X3' label='Parents 3X3X3'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Mosaic' label='Mosaic'  onChange={onChangeHandler}/>
+                    
+                  </div>
+                
+                  <div key={`default-radio7`} className="mb-3 category eventCube" style={{fontSize:'2.2vh',display:'flex',flexDirection:'row'}}>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='Clock' label='Clock'  onChange={onChangeHandler}/>
+                    <Form.Check  required={!eventCubeCategorySelected} name="eventCubeCategory" type='checkbox' value='High IQ' label='High IQ'  onChange={onChangeHandler}/>
+                    
+                  </div>
+                </Form.Group>
+                <div><span className='span'>Please select at least one category</span></div>
+              </div>
+          </div>
+            :<div></div>}
         </div>
         </div>
         <div className="form-group btn">
           
 
-          <Button  onClick={onSubmitHandler}  className="btn"  variant="danger">Register</Button>{' '}
+          <Button  onClick={onSubmitHandler}  type='submit' className="btn"  variant="danger">Register</Button>{' '}
           
         </div>
+        
       </form>
       </div>}
     </div>

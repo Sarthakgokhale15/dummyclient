@@ -2,24 +2,28 @@ import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 // import CloseIcon from '@mui/icons-material/Close';
 import './Card.css'
+import CloseButton from 'react-bootstrap/CloseButton';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({property,onClickCallback,img,text}) => {
+    const navigate=useNavigate();
     
     const {index, picture, city, address, bedrooms, bathrooms, carSpaces,temp} = property;
     if(temp==='back'){
         return (
         <div  id={`card-${index}`} className="card" style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',flexDirection:'column',backgroundColor:'white'}}>
         <div style={{height:'50%',width:'100%',display:'flex',alignItems:'center',justifyContent:'center'}}>
-            
-            <button onClick={onClickCallback}>X</button>
+       
+            <CloseButton onClick={onClickCallback}/>
            
             
         </div>
         <p style={{fontWeight:'bold'}}>Visit</p>
         <p style={{fontWeight:'bold'}}>{text}</p>
+        <p style={{fontWeight:'bold'}}>Event Page</p>
 
-        <Button variant="danger">Know more</Button>{' '}
+        <Button onClick={()=>navigate("/Event")} variant="danger">Know more</Button>{' '}
         
         
     </div>

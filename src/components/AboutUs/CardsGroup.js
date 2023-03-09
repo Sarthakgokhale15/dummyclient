@@ -8,7 +8,7 @@ import Header from '../Header/Header'
 function AboutCardsGroup() {
   return (
     <div>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start',flexDirection:'column',marginBottom:'15vh',fontWeight:'700',color:'#101828'}}><h2>Our Brands</h2></div>
+        <div className="AboutBrands" style={{display:'flex',alignItems:'center',justifyContent:'flex-start',flexDirection:'column',marginBottom:'15vh',fontWeight:'700',color:'#101828'}}><h2>Our Brands</h2></div>
         <div className="wrapper">
       <Card
         img="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198900198"

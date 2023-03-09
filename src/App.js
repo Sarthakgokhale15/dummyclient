@@ -7,9 +7,11 @@ import LogoSlider from './components/slider/slider'
 import './App.css'
 import CarousalBottom from './components/CarousalBottom/CarousalBottom'
 import Footer from './components/Footer/Footer'
+import DownloadBrochure from './components/Home/DownloadBrochure'
 function App() {
   return (
     <div>
+      <div>
       <Header />
       <Timer />
       <CustomCarousel />
@@ -18,7 +20,7 @@ function App() {
 
       <div className='sliderMain'>
         <div  className="sliderParent"style={{backgroundColor:"#1B2631",display:"flex",justifyContent:"center",flexDirection:"column",textAlign:'center'}}>
-          <h2 style={{color:"white" ,marginTop:'5rem'}}>Our Sponsors</h2>
+          <h2 style={{color:"white" ,marginTop:'5rem'}}>Our Partners</h2>
           <LogoSlider />
         </div>
       </div>
@@ -27,8 +29,9 @@ function App() {
       </div> */}
       <CarousalBottom/>
       <Footer />
-      <Header bgcolor={'#152D5A'} color={'white'} expand={false}/>
-
+      <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true}/>
+      </div>
+      <DownloadBrochure />
     </div>
   )
 }
