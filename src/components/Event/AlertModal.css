@@ -54,7 +54,7 @@
     color: white;
     position: fixed;
     top: 8px;
-    right: 8px;
+    /* right: 8px; */
   }
   
   .content {
@@ -68,7 +68,9 @@
     
   }
   .content .p1{
-    color: #EF495E;
+    padding-top: 4vh;
+    font-size: 3.5vh;
+    /* color: #EF495E; */
   }
   
   .btnContainer {
@@ -138,7 +140,12 @@
         color: white;
         position: absolute;
         top: 8px;
-        right: 20px;
+        font-size: 2vh !important;
+        /* right: 20px; */
+      }
+      .p1{
+        font-size: 2vh !important;
+        padding-top: 0vh !important;
       }
     
   }

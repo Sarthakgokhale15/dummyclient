@@ -17,14 +17,15 @@ const Modal = ({ open, onClose }) => {
       >
         
         <div className='modalRight'>
+          
+          <div className='content'>
           <p className='closeBtn' onClick={onClose}>
             X
           </p>
-          <div className='content'>
-            <p className='p1'>Registrations Started</p>
+            {/* <p className='p1'>Registrations Started</p> */}
             {/* <h1>$20 CREDIT</h1> */}
-            <p>Save upto Rs 2400 if you register for SuprCuber.</p>
-            <p>Valid Till 31st March</p>
+            <p className='p1'>Save upto Rs 2400 if you register for SuprCuber.</p>
+            <p className='p1'>Valid Till 31st March</p>
           </div>
           <div className='btnContainer'>
             <Button onClick={() => navigate("/register")} className="btn" type="submit" variant="danger">Register Now</Button>{' '}
