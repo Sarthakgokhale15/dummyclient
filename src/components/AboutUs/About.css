@@ -147,6 +147,13 @@ h2{
   max-width: 50vw ;
   max-height: 50vh ;
 }
+.AboutUs h2{
+  font-size: 6vh;
+}
+
+.AboutUsParagraph {
+  line-height: 1.8;
+}
 
 /* media queries for responsive designs */
 
@@ -228,6 +235,9 @@ h2{
 
 
 @media only screen and (max-width: 700px){
+  .AboutUs h2{
+    font-size: 4vh;
+  }
   .HomeaboutText{
     padding-top:0vh;
   }
