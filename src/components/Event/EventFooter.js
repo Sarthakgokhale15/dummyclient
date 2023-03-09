@@ -19,11 +19,11 @@ function EventFooter() {
         
             <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'15vh'}}>
                 <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '}
-                <p style={{fontWeight:'bold',paddingTop:'5vh'}}>Click below to download for Rules & Regulations</p>
+                <p style={{fontWeight:'bold',paddingTop:'5vh'}}>Click below to download Rules & Regulations</p>
                 <div className='regBtn' style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',}}>
-                    <Button onClick={() => window.open("https://drive.google.com/file/d/1J5GoLwBNx6nxm1ZPm1n5rxkrLtYHFFza/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprCuber Rules & Regulations</Button>{' '}
-                    <Button onClick={()=>window.open("https://drive.google.com/file/d/1dcO-C5CcABrvbfzVFtRYw2Imr3YcSFa3/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprGenius Rules & Regulations</Button>{' '}
-                    <Button onClick={() => window.open("https://docs.google.com/document/d/1F-Gsyqy7QJ7Ys_D5p-zUtXIjW_XLhba5c89K1gAXSU0/edit?usp=sharing")} className='regBtn' variant="outline-secondary">SuprFounder Jr Rules & Regulations</Button>{' '}
+                    <Button onClick={() => window.open("https://drive.google.com/file/d/1J5GoLwBNx6nxm1ZPm1n5rxkrLtYHFFza/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprCuber</Button>{' '}
+                    <Button onClick={()=>window.open("https://drive.google.com/file/d/1dcO-C5CcABrvbfzVFtRYw2Imr3YcSFa3/view?usp=sharing")} className='regBtn' variant="outline-secondary">SuprGenius</Button>{' '}
+                    <Button onClick={() => window.open("https://docs.google.com/document/d/1F-Gsyqy7QJ7Ys_D5p-zUtXIjW_XLhba5c89K1gAXSU0/edit?usp=sharing")} className='regBtn' variant="outline-secondary">SuprFounder Jr</Button>{' '}
                 </div>
             </div>
             <div className='calc' style={{position:'relative',top:'10vh',width:'100vw',display:'flex',alignItems:'flex-start',zIndex:1}}>
