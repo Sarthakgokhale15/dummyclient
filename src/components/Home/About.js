@@ -32,9 +32,9 @@ export default function About() {
         </div>
         <div className='cardGroup'>
             
-                <FlipCard text={'Cube Competition'} img={'https://ik.imagekit.io/suprkid/imgcube-2-2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677577069663'}/>
-                <FlipCard text={'Mental Math'} img={'https://ik.imagekit.io/suprkid/2ndimg_X2f856_xa?ik-sdk-version=javascript-1.4.3&updatedAt=1677312967421'}/>
-                <FlipCard text={'SUPER Shark'} img={'https://ik.imagekit.io/suprkid/3rdImg_wRNEc8EGj?ik-sdk-version=javascript-1.4.3&updatedAt=1677312849855'} />
+                <FlipCard text={'SuprCuber'} img={'https://ik.imagekit.io/suprkid/imgcube-2-2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677577069663'}/>
+                <FlipCard text={'SuprGenius'} img={'https://ik.imagekit.io/suprkid/2ndimg_X2f856_xa?ik-sdk-version=javascript-1.4.3&updatedAt=1677312967421'}/>
+                <FlipCard text={'SuprFounder Jr'} img={'https://ik.imagekit.io/suprkid/3rdImg_wRNEc8EGj?ik-sdk-version=javascript-1.4.3&updatedAt=1677312849855'} />
            </div>
        
 

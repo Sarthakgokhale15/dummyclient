@@ -14,7 +14,7 @@ function AfterSubmit() {
         <div className="Final">
         <img src='https://ik.imagekit.io/suprkid/Frame.png'></img>
         <h3>Thanks for your interest! </h3>
-        <p>Our Team will get in touch with you soon..</p>
+        <p>Our Team will get in touch with you soon.</p>
         <div className='btn'>
         <Button  onClick={() => navigate("/")} variant="danger">Visit Home</Button>{' '}
         {/* <Button onClick={() => navigate("/register")} variant="danger">Submit another registration</Button>{' '} */}

@@ -5,7 +5,7 @@ const DownloadBrochure = () => {
   const navigate=useNavigate();
   return (
     <div className="download-brochure">
-      <button onClick={()=>navigate("/PartnerWithUs")} className="download-brochure-btn">Intrested In Partnering with us</button>
+      <button onClick={()=>navigate("/PartnerWithUs")} className="download-brochure-btn">Interested in Partnering with Us?</button>
     </div>
   );
 };

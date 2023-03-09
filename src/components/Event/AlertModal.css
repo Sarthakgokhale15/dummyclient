@@ -108,11 +108,12 @@
         /* max-height: 100vh; */
     }
     .modalContainer img{
-        width: 40vw;
+        height: 50vh;
+        width: 30vw;
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .modalContainer {
       
       flex-direction: row;

@@ -23,14 +23,14 @@ const Modal = ({ open, onClose }) => {
           <div className='content'>
             <p className='p1'>Registrations Started</p>
             {/* <h1>$20 CREDIT</h1> */}
-            <p>Register Now & Avail EARLY BIRD OFFER</p>
+            <p>Save upto Rs 2400 if you register for SuprCuber.</p>
             <p>Valid Till 31st March</p>
           </div>
           <div className='btnContainer'>
             <Button onClick={() => navigate("/register")} className="btn" type="submit" variant="danger">Register Now</Button>{' '}
           </div>
         </div>
-        <img src='https://ik.imagekit.io/suprkid/imgcube-2-2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677577069663' alt='/' />
+        <img src='https://ik.imagekit.io/suprkid/Event_Details_1.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677841177973' alt='/' />
       </div>
     </div>
   );

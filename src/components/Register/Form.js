@@ -20,21 +20,47 @@ export default function CustomForm() {
   const [categorySelected, setcategorySelected] = useState(false)
   const [eventCubeCategorySelected, seteventCubeCategorySelected] = useState(false)
   const [genderSelected, setgenderSelected] = useState(false)
+  const [ContactNumber, setContactNumber] = useState('+91 ')
   const [formData, setFormData] = useState({
     childName: '',
     parentName: '',
     Age: '',
     gender: '',
     Category: [],
-    ContactNumber:'',
+
     Location:'',
     JcaMember:'',
     CubeCat:[],
     
   })
 
+  const handlePhoneNumberChange = (event) => {
+    const input = event.target;
+    // Check if the user is trying to edit the first three characters
+    if (input.selectionStart < 4) {
+      // If so, move the cursor to the end of the input field
+      input.selectionStart = input.selectionEnd = input.value.length;
+    } else {
+      // Otherwise, update the phoneNumber state as usual
+      setContactNumber(input.value);
+    }
+  };
+
+
+
 const validateForm=()=>{
-  if(formData.name==='' || formData.Age==='' || formData.Category.length===0 || formData.ContactNumber==='' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
+  const regexPattern = new RegExp("[A-Za-z]+");
+  if(regexPattern.test(formData.childName)){
+    console.log("input child name is valid");
+  }
+  else{
+    console.log("input child name is invalid");
+  }
+
+  if(formData.name==='' || formData.Age==='' || formData.Category.length===0 || ContactNumber==='+91 ' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
+    return false;
+  }
+  if(ContactNumber.length!=14){
     return false;
   }
   if(formData.Category.includes('SuprCuber') && formData.CubeCat.length===0){
@@ -133,7 +159,7 @@ const validateForm=()=>{
     let category1=formData.Category.includes('SuprCuber');
     let category2=formData.Category.includes('SuprGenius');
     let category3=formData.Category.includes('SuprFounder Jr');
-
+     console.log(ContactNumber)
     const data = {
       childName:formData.childName,
       Age:formData.Age,
@@ -142,7 +168,7 @@ const validateForm=()=>{
       category1:category1,
       category2:category2,
       category3:category3,
-      ContactNumber:formData.ContactNumber,
+      FormattedContactNumber:ContactNumber.substring(4),
       location:formData.Location,
       JcaMember:formData.JcaMember,
       cat1:formData.CubeCat.includes('3X3X3'),
@@ -192,7 +218,7 @@ const validateForm=()=>{
         <div className='col1'>
           <div className="form-group">
             <label htmlFor="childName" className="form-label">Child Full Name</label>
-            <input className="form-control" name="childName" onChange={onChangeHandler} value={formData.childName} placeholder="Leo" required />
+            <input className="form-control" name="childName" onChange={onChangeHandler} value={formData.childName} placeholder="Leo" required pattern='[A-Za-z]+'/>
             <span className='span'>Please enter valid name</span>
           </div>
           <div className="form-group">
@@ -216,7 +242,7 @@ const validateForm=()=>{
           
           <div className="form-group">
           <label htmlFor="ContactNumber" className="form-label">Contact Number</label>
-          <input className="form-control" name="ContactNumber" onChange={onChangeHandler} value={formData.ContactNumber} placeholder="9876543210" required pattern='^[0-9]{10}$'/>
+          <input onChange={handlePhoneNumberChange}   value={ContactNumber} className="form-control" name="ContactNumber" type="tel" placeholder="Enter 10 digit phone number" required pattern="\+91 \d{10}"/>
           <span className='span'>Enter valid Contact Number</span>
         </div>
         </div>
