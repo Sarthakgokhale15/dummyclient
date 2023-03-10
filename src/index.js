@@ -12,6 +12,7 @@ import PartnerForm from './components/PartnerForm/PartnerForm';
 import {Route,Routes,BrowserRouter} from 'react-router-dom';
 import AfterSubmit from './components/PartnerForm/AfterSubmit'
 import FAQ from './components/FAQ/FAQ'
+import GMap from './components/Maps/GMap';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ root.render(
         <Route path='/PartnerWithUs' element={<PartnerForm/>}/>
         <Route path='/AfterSubmit' element={<AfterSubmit/>}/>
         <Route path='/Faq' element={<FAQ/>}/>
+        <Route path='/map' element={<GMap/>}/>
       </Routes>
    </BrowserRouter>
     

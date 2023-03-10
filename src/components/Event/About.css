@@ -95,7 +95,8 @@
     }
     .aboutText{
       position: absolute;
-      top:7vh;
+      top:7vh; 
+      padding-bottom: 20vh !important;
     }
     .ImgGroup .EventimgBox1{
       max-width: 30vw;
