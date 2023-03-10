@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import EventFooter from './EventFooter.js'
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { display } from '@mui/system';
+import FAQ from '../FAQ/FAQ'
 
 export default function EventCarousalBottom() {
 	const navigate = useNavigate();
@@ -101,7 +102,7 @@ export default function EventCarousalBottom() {
 					"Description1":`Super Founder Jr - your very own Shark Tank for kids`
 				},
 				{
-					"title1":"Brief:",
+					"title1":"Brief",
 					"Description1":`Groom your child to be the CEOs of tomorrow. We at DO (Digital Outcomes) are conducting a workshop & an event to educate children on Financial literacy,Presentation Skills & Pitching their own business idea / startup.This will be a great way for kids to learn about business and entrepreneurship. They will be trained to come up with ideas, develop them into viable businesses, and then pitch their ideas to investors. They will also learn about negotiation and the importance of being confident and well-prepared when pitching an idea. We want to inspire kids to pursue their own business ideas in the future.Enrol in this 3 day workshop where we give your child a chance to audition and present his very own start up idea to our panel of investors. If you are selected you will get a chance to be part of the demo day (to be held in Mumbai on 29th April at 6pm) where your child will present the idea physically to a group of actual investors.`
 				},
 				{
@@ -149,116 +150,57 @@ export default function EventCarousalBottom() {
 	}
   return (
 	<div>
-	<div className='mainCard' style={mainCardStyles(slideNo)}>
+	<div>
 
-		<div className='imgCone1' style={{marginBottom:'50vh'}}>
+		{/* <div className='imgCone1' style={{marginBottom:'50vh'}}>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'40vh'}} src='https://ik.imagekit.io/suprkid/Group-9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649471963'/>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'20vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Group.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677409238737'/>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'30vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Vector-7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677902304136'/>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'30vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Group.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677409238737'/>
 			
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'50vh'}} className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Groupplane.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677315309559'/>
-		</div>
+		</div> */}
 		
 
-	<div className='Main EventCard'>
-        <div className='BtnGroup' style={{bottom:slideNo===2?'30vh':'60vh'}}>
+	<div >
+		
+        <div className='BtnGroup' style={{marginBottom:'10vh',marginTop:'20vh'}}>
             <Button style={ {backgroundColor:slideNo===0?'red':'',color:slideNo===0?'white':''}} onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button style={ {backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}}  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  style={ {backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
         </div>	
-	<div className='bottomCard' style={{marginTop:slideNo===0?'45vh':'0'}}>
+		
+	<div>
 	<TransitionGroup>
 		<CSSTransition 
 			timeout={100}
 			classNames="silde right-to-left"
 			key={slideNo} 
 		>
-	<div className='CarousalCardContent eventCarousal' style={{marginTop:slideNo===2?'30vh':'0',marginBottom:slideNo===0?'20vh':'0'}}>
-		
-		<div className='CarousalCardItem'>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][0].title1}</p>}
-
-				{data[slideNo][0].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-
-               
+			<div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+				<h3>Most Asked Questions</h3>			
+				<FAQ  slideNo={slideNo} data={data} text={slideNo===0?"cuber":"test"}/>
 			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][1].title1}</p>}
-
-				{data[slideNo][1].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][2].title1}</p>}
-				<div className ='EventDetailsImg'style={{height:slideNo===0?'75vh':'0', width:slideNo===0? '55vw':'0'}}>
-				
-				{ <img src={data[slideNo][2].img}/>}
-				</div>
-				
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				<div style={{height:slideNo===0?'2vh':'0'}}></div>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][3].title1}</p>}
-				{data[slideNo][3].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][4].title1}</p>}
-				{data[slideNo][4].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][5].title1}</p>}
-				{data[slideNo][5].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][6].title1}</p>}
-				{data[slideNo][6].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-
-			</div>
-			<div style={{display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',textAlign:'left'}}>
-				{<p style={{color:'black',fontWeight:'bold'}}>{data[slideNo][7].title1}</p>}
-				{data[slideNo][7].Description1.split('\n').map(i => {
-    				return <p className='desc'>{i}</p>
-				})}
-
-			</div>
-			
-		</div>
-		
-	</div>
 	</CSSTransition>	
 		</TransitionGroup>
 	</div>
 	
-	<div className='btn' style={Btnstyles(slideNo)} onClick={() => navigate("/register")}>
+	<div className='btn'  onClick={() => navigate("/register")}>
 	{/* <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '} */}
     {/* <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '} */}
 	
 	</div>
 	
 	</div>
-	<div className='imgCone2'>
+	{/* <div className='imgCone2'>
 		<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'50vh'}} src='https://ik.imagekit.io/suprkid/Group-8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677649469283'/>
 		<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'20vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Group.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677409238737'/>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'30vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Vector-7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677902304136'/>
 			<img style={{maxHeight:'10vh',maxWidth:'10vw',marginBottom:'30vh'}}className='bottomCarousalImages' src='https://ik.imagekit.io/suprkid/Group.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677409238737'/>
-		</div>
+		</div> */}
 	
 	</div>
+	{/* <FAQ /> */}
 	<EventFooter />
 	</div>
   )

@@ -194,7 +194,9 @@
         margin-bottom: 30vh;
     }
     
-
+    .BtnGroup{
+        margin-top: 30vh !important;
+    }
     
     .BtnGroup Button{
         max-width: 35vw;

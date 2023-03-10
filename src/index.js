@@ -11,6 +11,7 @@ import About from './components/Home/About';
 import PartnerForm from './components/PartnerForm/PartnerForm';
 import {Route,Routes,BrowserRouter} from 'react-router-dom';
 import AfterSubmit from './components/PartnerForm/AfterSubmit'
+import FAQ from './components/FAQ/FAQ'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ root.render(
         <Route path='/Event' element={<Event/>}/>
         <Route path='/PartnerWithUs' element={<PartnerForm/>}/>
         <Route path='/AfterSubmit' element={<AfterSubmit/>}/>
+        <Route path='/Faq' element={<FAQ/>}/>
       </Routes>
    </BrowserRouter>
     

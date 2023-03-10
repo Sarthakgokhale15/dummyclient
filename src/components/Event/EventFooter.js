@@ -17,7 +17,7 @@ function EventFooter() {
             
             
         
-            <div style={{display:'flex',alignItems:'center',flexDirection:'column',marginTop:'15vh'}}>
+            <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
                 <Button onClick={() => navigate("/register")} variant="danger">Register Now</Button>{' '}
                 <p style={{fontWeight:'bold',paddingTop:'5vh'}}>Click below to download Rules & Regulations</p>
                 <div className='regBtn' style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',}}>

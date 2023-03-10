@@ -4,6 +4,7 @@ import './Event.css'
 import AlertModal from './AlertModal'
 import EventCarousalBottom from './EventCarousalBottom.js'
 // import EventFooter from './EventFooter';
+import FAQ from '../FAQ/FAQ'
 
 import Timer from '../Clock/Timer/Timer'
 import About from './About';
@@ -29,6 +30,7 @@ function Event() {
             <About />
         </div>
         <EventCarousalBottom />
+        
         
         
         
