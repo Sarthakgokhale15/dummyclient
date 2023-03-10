@@ -36,7 +36,7 @@ const Card = ({property,onClickCallback,img,text}) => {
             <img className='cardImg' src={img} alt={text} />
             <div className="details">
                 
-                <p>{text}</p>
+                <p style={{}}>{text}</p>
             </div>
         </div>
         
