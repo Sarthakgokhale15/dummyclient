@@ -164,7 +164,7 @@ export default function EventCarousalBottom() {
 
 	<div >
 		
-        <div className='BtnGroup' style={{marginBottom:'10vh',marginTop:'40vh'}}>
+        <div className='EventBtnGroup BtnGroup' style={{marginBottom:'10vh',marginTop:'40vh'}}>
             <Button style={ {backgroundColor:slideNo===0?'red':'',color:slideNo===0?'white':''}} onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button style={ {backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}}  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  style={ {backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}

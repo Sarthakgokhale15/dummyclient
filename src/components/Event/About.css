@@ -69,6 +69,9 @@
   }
  }
  @media screen and (max-width: 600px){
+  .eventText p{
+    font-size: 1.2vh !important;
+  }
   .ImgGroup .boxx{
     max-width: 15vw !important;
     /* padding-bottom: 20vh; */
