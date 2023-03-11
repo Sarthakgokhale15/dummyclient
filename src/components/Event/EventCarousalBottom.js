@@ -147,8 +147,8 @@ export default function EventCarousalBottom() {
 
 	useEffect(() => {
 		const handleScrollButtonVisiblity = () => {
-			window. pageYOffset > 100 ? setshowIcon(true) : setshowIcon( false);
-			window. pageYOffset > 100 ? setShowButton(true) : setShowButton( false);
+			window. pageYOffset > 1500 ? setshowIcon(true) : setshowIcon( false);
+			window. pageYOffset > 1500 ? setShowButton(true) : setShowButton( false);
 			
 			};
 			window.addEventListener( 'scroll', handleScrollButtonVisiblity);
