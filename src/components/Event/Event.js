@@ -8,6 +8,7 @@ import FAQ from '../FAQ/FAQ'
 
 import Timer from '../Clock/Timer/Timer'
 import About from './About';
+import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons';
 function Event() {
     const [openModal, setOpenModal] = useState(false);
     useEffect(() => {

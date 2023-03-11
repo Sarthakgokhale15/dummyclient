@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import {React,useState,useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import './EventCarousalBottom.css';
 import { useNavigate } from "react-router-dom";
@@ -6,10 +6,18 @@ import EventFooter from './EventFooter.js'
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { display } from '@mui/system';
 import FAQ from '../FAQ/FAQ'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp, faFontAwesome ,faSquareWhatsapp} from '@fortawesome/free-brands-svg-icons'
 export default function EventCarousalBottom() {
+
+
+
+
 	const navigate = useNavigate();
 	const [slideNo, setslideNo] = useState(0);
+	const [showButton, setShowButton] = useState(false)
+	const [showIcon, setshowIcon] = useState(false)
 	const arr=['SuprCuber','SuprGenius','SuprFounder Jr'];
 	const data=[
 
@@ -136,6 +144,24 @@ export default function EventCarousalBottom() {
 		
 		
 	];
+
+	useEffect(() => {
+		const handleScrollButtonVisiblity = () => {
+			window. pageYOffset > 100 ? setshowIcon(true) : setshowIcon( false);
+			window. pageYOffset > 100 ? setShowButton(true) : setShowButton( false);
+			
+			};
+			window.addEventListener( 'scroll', handleScrollButtonVisiblity);
+	
+			return () => {
+				window. removeEventListener( 'scroll', handleScrollButtonVisiblity);
+			};
+			}, []);
+			
+
+	const handleScrollToTop = () => {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
 	const Btnstyles = (slideNo) => ({
 		marginTop: slideNo===2?'60vh':'80vh',
 		
@@ -165,9 +191,20 @@ export default function EventCarousalBottom() {
 	<div >
 		
         <div className='EventBtnGroup BtnGroup' style={{marginBottom:'10vh',marginTop:'40vh'}}>
+			
+			{showIcon && <div className='WhatsappIcon'><a><FontAwesomeIcon className="icon" icon={faSquareWhatsapp} onClick={()=>console.log("whatsapp working")}/></a></div>}
+			
+			
             <Button style={ {backgroundColor:slideNo===0?'red':'',color:slideNo===0?'white':''}} onClick={()=>changeSlide(0)} variant="outline-danger">{arr[0]}</Button>{' '}
             <Button style={ {backgroundColor:slideNo===1?'red':'',color:slideNo===1?'white':''}}  onClick={()=>changeSlide(1)} variant="outline-danger">{arr[1]}</Button>{' '}
             <Button  style={ {backgroundColor:slideNo===2?'red':'',color:slideNo===2?'white':''}} onClick={()=>changeSlide(2)} variant="outline-danger">{arr[2]}</Button>{' '}
+			{showButton && (
+				<div className="scrollToTop">
+				<button className="fixed bottom-5 right-7 z-50 cursor-pointer p-4"
+				onClick={handleScrollToTop}
+				> <FontAwesomeIcon icon={faArrowUp}/> </button>
+				</div>
+				)}
         </div>	
 		
 	<div>

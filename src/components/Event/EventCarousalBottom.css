@@ -134,7 +134,37 @@
     max-width: 55vw;
     max-height: 75vh;
 }
-
+.WhatsappIcon{
+    position: fixed;
+    top:50vh;
+    left:5vw;
+    z-index: 1;
+}
+.WhatsappIcon a{
+    cursor: pointer;
+    /* color: green; */
+    /* background-color: transparent; */
+    /* background-color: aquamarine; */
+   font-size: 3.5rem;
+}
+.WhatsappIcon .icon{
+    /* color: white !important; */
+    color: green ;
+}
+.scrollToTop{
+    position: fixed;
+    top:52vh;
+    right:5vw;
+    /* width: fit-content; */
+    z-index: 1;
+}
+.scrollToTop button{
+    align-items: center;
+    display: flex;
+    width: 50px !important;
+    height: 50px !important;
+    justify-content: center;
+}
 
 @media only screen and (max-width: 1480px){
     .mainCard{
@@ -181,6 +211,9 @@
    
 }
 @media only screen and (max-width: 600px){
+    .WhatsappIcon{
+
+    }
     .eventCarousal{
         
     }
