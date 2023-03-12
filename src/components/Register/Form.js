@@ -168,7 +168,7 @@ const validateForm=()=>{
       FormattedContactNumber:ContactNumber.substring(4),
       location:formData.Location,
       JcaMember:formData.JcaMember,
-      cat1:formData.CubeCat.includes('3X3X3'),
+      cat1:formData.Category.includes('SuprCuber'),
       cat2:formData.CubeCat.includes('2X2X2'),
       cat3:formData.CubeCat.includes('4X4X4'),
       cat4:formData.CubeCat.includes('Skewb'),
