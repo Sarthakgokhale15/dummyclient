@@ -195,7 +195,8 @@ const validateForm=()=>{
 
       if(res.status==200){
         setloading(false);
-        navigate("/registrationSuccessful");
+        const showPaymentBtn=formData.Category.includes('SuprFounder Jr');
+        navigate("/registrationSuccessful",{ state: { showPayment:showPaymentBtn} });
       }
       
     }).catch(e=>{

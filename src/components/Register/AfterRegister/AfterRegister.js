@@ -6,12 +6,14 @@ import Clock from "../../Clock/Clock";
 import Timer from '../../Clock/Timer/Timer'
 import Final from './Final'
 
-
+import { useLocation } from 'react-router-dom';
 
 
 
 
 function Register() {
+  const {state} = useLocation();
+  const { showPayment } = state; 
   
   return (
     <div className="register">
@@ -42,7 +44,7 @@ function Register() {
         </div>
       </div>
       <div className='Form1'>
-        <Final/>
+        <Final showPayment={showPayment}/>
       </div>
       {/* <div>
         <Final />

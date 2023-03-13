@@ -113,7 +113,7 @@ export default function CarousalBottom() {
 	</div>
 
 	<div className='dummy'></div>
-	<div className='homeRegBtnParent' style={{display:'flex',justifyContent:"center"}}><Button  className='Reg Homereg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
+	<div className='homeRegBtnParent' style={{display:'flex',justifyContent:"center",paddingTop:slideNo===0?"5vh":'0'}}><Button  className='Reg Homereg'onClick={() => navigate("/register")} variant="danger" size='lg'>Register Now</Button>{' '}</div>
 	
 	{/* <div className='btn' style={{marginTop:'15vh'}}> */}
 	{/* <Button onClick={() => navigate("/Event")} variant="danger">register Now</Button>{' '} */}
