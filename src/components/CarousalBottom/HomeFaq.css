@@ -1,0 +1,28 @@
+.FaqCard{
+    width: 70%;
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.FaqCard .faqHeader  p{
+    font-size: 18px;
+    font-weight: bold !important;
+}
+.FaqCard .description p {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 600px){
+    .FaqCard{
+        width: 100%;
+    }
+    .FaqCard img {
+        max-width: 50vw;
+        max-height: 50vh;
+    }
+    .FaqCard .faqHeader  p{
+        font-size: 15px;
+        font-weight: bold !important;
+    }
+}
+   
