@@ -1,6 +1,12 @@
 .Timer {
     text-align: center;
     background: transparent;
+    margin-top: 15vh;
+    /* position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; */
   }
   
    .plane2{

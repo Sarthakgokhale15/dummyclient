@@ -36,7 +36,7 @@ function EventFooter() {
                     <OverlayCardFooter />
                 </div>
             </div>
-            <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true}/>
+            <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true} fixed={false}/>
         </div>
         
         

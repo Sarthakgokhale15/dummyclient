@@ -13,7 +13,8 @@ function Header(props) {
   const navigate = useNavigate();
 
   return (
-    <Navbar expand="md" className='navbar-main' style={{backgroundColor:`${props.bgcolor}`}}>
+    
+    <Navbar expand="md" className='navbar-main' style={{backgroundColor:`${props.bgcolor}`}} fixed={props.fixed===true?"top":""}>
       <Container className='navContainer'>
         <Navbar.Brand onClick={() => navigate("/")}>
           <img style={{borderRadius:'10px',maxHeight:'10vh',maxWidth:'50vw'}} src="https://ik.imagekit.io/suprkid/high_res_brand_logos/All_Logos_Suprlegend/8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678198899223"/>
@@ -41,6 +42,7 @@ function Header(props) {
         
       </Container>
     </Navbar>
+
   );
 }
 

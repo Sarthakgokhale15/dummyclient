@@ -9,6 +9,8 @@ import FAQ from '../FAQ/FAQ'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faFontAwesome ,faSquareWhatsapp} from '@fortawesome/free-brands-svg-icons'
+import EventImageCarousal from './EventImageCarousal'
+
 export default function EventCarousalBottom() {
 
 

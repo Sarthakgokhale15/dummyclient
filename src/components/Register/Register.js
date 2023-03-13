@@ -14,7 +14,7 @@ function Register() {
   
   return (
     <div className="register">
-      <Header />
+      <Header fixed={true}/>
       <Timer />
       <div className='about1'>
         <div className='cloud1'>

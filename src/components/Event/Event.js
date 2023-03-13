@@ -21,7 +21,7 @@ function Event() {
   return (
     <div>
 
-        <Header />
+        <Header fixed={true}/>
         <Timer />
         <div className='bgImgContainer'>
             <AlertModal 

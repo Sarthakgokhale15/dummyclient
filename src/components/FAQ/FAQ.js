@@ -69,6 +69,7 @@ function BasicExample(props) {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    
     </div>
   );
 }

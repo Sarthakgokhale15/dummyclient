@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <div>
-      <Header />
+      <Header fixed={true}/>
       <Timer />
       <CustomCarousel />
       <About />
@@ -30,7 +30,7 @@ function App() {
       </div> */}
       <CarousalBottom/>
       <Footer />
-      <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true}/>
+      <Header bgcolor={'#152D5A'} color={'white'} expand={false} showFooter={true} fixed={false}/>
       </div>
       <DownloadBrochure />
     </div>

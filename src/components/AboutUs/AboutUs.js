@@ -6,7 +6,7 @@ import AboutCardGroup from './CardsGroup'
 function AboutUs() {
   return (
     <div>
-        <Header />
+        <Header fixed={true}/>
         <Timer />
         <About />
         
