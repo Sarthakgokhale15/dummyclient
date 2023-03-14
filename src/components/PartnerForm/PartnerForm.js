@@ -42,6 +42,20 @@ function FormPartner() {
     const brandRepNameRef=useRef();
     const emailRef=useRef();
     const ContactNumberRef=useRef();
+    function formatDate(date) {
+      var year = date.getFullYear(),
+          month = date.getMonth() + 1, // months are zero indexed
+          day = date.getDate(),
+          hour = date.getHours(),
+          minute = date.getMinutes(),
+          second = date.getSeconds(),
+          hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+          minuteFormatted = minute < 10 ? "0" + minute : minute,
+          morning = hour < 12 ? "am" : "pm";
+  
+      return  day  + "/" +month + "/" + year + " " + hourFormatted + ":" +
+              minuteFormatted + morning;
+  }
 
     const handlePhoneNumberChange = (event) => {
       const input = event.target;
@@ -62,6 +76,7 @@ function FormPartner() {
         const brandRepName=brandNameRef.current.value;
         const email=emailRef.current.value;
         const formattedContactNumber=ContactNumber.substring(3);
+        const date=formatDate(new Date()).toString();
         console.log(formattedContactNumber)
 
     //    console.log(brandName);
@@ -69,7 +84,7 @@ function FormPartner() {
     //    console.log(email);
     //    console.log(ContactNumber);
      
-        const data=[brandName,brandRepName,email,formattedContactNumber];
+        const data=[brandName,brandRepName,email,formattedContactNumber,date];
         console.log(data);
       await axios.post("https://super-legend-server-main.vercel.app/partner",{
           'Access-Control-Allow-Origin' : '*',
@@ -79,7 +94,7 @@ function FormPartner() {
       
     }).then(res=>{
 
-      if(res.status==201){
+      if(res.status==200){
         setLoading(false);
         navigate("/AfterSubmit");
       }

@@ -145,6 +145,20 @@ const validateForm=()=>{
    
   }
 
+  function formatDate(date) {
+    var year = date.getFullYear(),
+        month = date.getMonth() + 1, // months are zero indexed
+        day = date.getDate(),
+        hour = date.getHours(),
+        minute = date.getMinutes(),
+        second = date.getSeconds(),
+        hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+        minuteFormatted = minute < 10 ? "0" + minute : minute,
+        morning = hour < 12 ? "am" : "pm";
+
+    return  day  + "/" +month + "/" + year + " " + hourFormatted + ":" +
+            minuteFormatted + morning;
+}
 
 
 
@@ -160,7 +174,8 @@ const validateForm=()=>{
     let category1=formData.Category.includes('SuprCuber');
     let category2=formData.Category.includes('SuprGenius');
     let category3=formData.Category.includes('SuprFounder Jr');
-     console.log(ContactNumber)
+
+    
     const data = {
       childName:formData.childName,
       Age:formData.Age,
@@ -183,10 +198,11 @@ const validateForm=()=>{
       cat8:formData.CubeCat.includes('Mosaic'),
       cat9:formData.CubeCat.includes('Clock'),
       cat10:formData.CubeCat.includes('High IQ'),
+      date:formatDate(new Date()).toString(),
 
     };
     console.log(data);
-    console.log(formData.CubeCat);
+    // console.log(formData.CubeCat);
     setloading(true);
 
     // https://super-legend-server-main.vercel.app

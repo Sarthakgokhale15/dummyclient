@@ -11,13 +11,18 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faFontAwesome ,faSquareWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import EventImageCarousal from './EventImageCarousal'
 
-export default function EventCarousalBottom() {
+export default function EventCarousalBottom(props) {
 
 
 
 
 	const navigate = useNavigate();
-	const [slideNo, setslideNo] = useState(0);
+	let defaultSlideNo=props.slideNo;
+	
+	const [slideNo, setslideNo] = useState(defaultSlideNo);
+	// if(defaultSlideNo){
+	// 	setslideNo(defaultSlideNo);
+	// }
 	const [showButton, setShowButton] = useState(false)
 	const [showIcon, setshowIcon] = useState(false)
 	const arr=['SuprCuber','SuprGenius','SuprFounder Jr'];

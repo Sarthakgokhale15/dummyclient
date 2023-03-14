@@ -7,6 +7,16 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Card = ({property,onClickCallback,img,text}) => {
+    let slideNo=0;
+    if(text==="SuprCuber"){
+        slideNo=0;
+    }
+    else if(text==="SuprGenius"){
+        slideNo=1;
+    }
+    else{
+        slideNo=2;
+    }
     const navigate=useNavigate();
     
     const {index, picture, city, address, bedrooms, bathrooms, carSpaces,temp} = property;
@@ -23,7 +33,7 @@ const Card = ({property,onClickCallback,img,text}) => {
         <p style={{fontWeight:'bold'}}>{text}</p>
         <p style={{fontWeight:'bold'}}>Event Page</p>
 
-        <Button onClick={()=>navigate("/Event")} variant="danger">Know more</Button>{' '}
+        <Button onClick={()=>navigate("/Event",{ state: { slideNo:slideNo} })} variant="danger">Know more</Button>{' '}
         
         
     </div>

@@ -5,11 +5,14 @@ import AlertModal from './AlertModal'
 import EventCarousalBottom from './EventCarousalBottom.js'
 // import EventFooter from './EventFooter';
 import FAQ from '../FAQ/FAQ'
-
+import { useLocation } from 'react-router-dom';
 import Timer from '../Clock/Timer/Timer'
 import About from './About';
 import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 function Event() {
+    const {state} = useLocation();
+    const { slideNo } = state;
     const [openModal, setOpenModal] = useState(false);
     useEffect(() => {
         setOpenModal(true);
@@ -30,7 +33,7 @@ function Event() {
             />
             <About />
         </div>
-        <EventCarousalBottom />
+        <EventCarousalBottom slideNo={slideNo}/>
         
         
         
