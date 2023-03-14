@@ -79,7 +79,7 @@ function FormPartner() {
       
     }).then(res=>{
 
-      if(res.status==200){
+      if(res.status==201){
         setLoading(false);
         navigate("/AfterSubmit");
       }

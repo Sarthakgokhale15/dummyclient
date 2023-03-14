@@ -2,7 +2,7 @@ import './Form.css';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-
+import { useRef } from 'react';
 import RadioBtn from './RadioBtn';
 import Form from 'react-bootstrap/Form';
 import validator from "validator";
@@ -13,6 +13,7 @@ import Alert from 'react-bootstrap/Alert';
 
 
 export default function CustomForm() {
+  const ParentemailRef=useRef();
 
   const navigate = useNavigate();
   const [date, setDate] = useState(new Date());
@@ -30,7 +31,7 @@ export default function CustomForm() {
     Category: [],
 
     Location:'',
-    JcaMember:'',
+
     CubeCat:["3X3X3"],
     
   })
@@ -54,6 +55,11 @@ const validateForm=()=>{
   // if(!formData.CubeCat.includes('3X3X3')){
   //     return false;
   // }
+  const email=ParentemailRef.current.value.toString();
+  let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+  if(!regex.test(email)){
+    return false;
+  }
   if(formData.name===''|| formData.Category.length===0 || ContactNumber==='+91 ' || formData.Location==='' || formData.gender==='' ||formData.parentName===''){
     return false;
   }
@@ -63,9 +69,7 @@ const validateForm=()=>{
   if(formData.Category.includes('SuprCuber') && formData.CubeCat.length===0){
     return false;
   }
-  if(formData.Category.includes('SuprCuber') && formData.JcaMember===''){
-    return false;
-  }
+  
   return true;
 }
 
@@ -167,7 +171,8 @@ const validateForm=()=>{
       category3:category3,
       FormattedContactNumber:ContactNumber.substring(4),
       location:formData.Location,
-      JcaMember:formData.JcaMember,
+      email:ParentemailRef.current.value.toString(),
+
       cat1:formData.Category.includes('SuprCuber'),
       cat2:formData.CubeCat.includes('2X2X2'),
       cat3:formData.CubeCat.includes('4X4X4'),
@@ -185,7 +190,7 @@ const validateForm=()=>{
     setloading(true);
 
     // https://super-legend-server-main.vercel.app
-     await axios.post("https://super-legend-server-main.vercel.app/user",{
+     await axios.post("http://192.168.43.92:3003/user",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
 
@@ -193,7 +198,7 @@ const validateForm=()=>{
       
     }).then(res=>{
 
-      if(res.status==200){
+      if(res.status==201){
         setloading(false);
         const showPaymentBtn=formData.Category.includes('SuprFounder Jr');
         navigate("/registrationSuccessful",{ state: { showPayment:showPaymentBtn} });
@@ -255,6 +260,13 @@ const validateForm=()=>{
         </div>
         </div>
         <div className='col2'>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control ref={ParentemailRef} type="email" name="email" placeholder="Enter parent's email" style={{width:'90%'}} required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/>
+            {/* <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text> */}
+          </Form.Group>
           <div className="form-group">
             <label htmlFor="parentName" className="form-label">Parent Name</label>
             <input className="form-control" name="parentName" onChange={onChangeHandler} value={formData.parentName} placeholder="John" required/>
@@ -301,19 +313,7 @@ const validateForm=()=>{
           <input className="form-control" name="Location" onChange={onChangeHandler} value={formData.Location} placeholder="EG:Kurla" required/>
           <span className='span'>Please enter valid location</span>
         </div>
-          {formData.Category.includes('SuprCuber')?<div className="form-group">
-          <label htmlFor="gender" className="form-label">Are you a JCA Member</label>
-                    <div className='category'>
-                  
-                  <Form.Group >
-                    <div key={`default-radio3`} className="mb-3" style={{fontSize:'2.2vh'}}>
-                      <Form.Check   required name="JcaMember" type='radio' value='Yes' label='Yes' inline onChange={onChangeHandler}/>
-                      <Form.Check   required name="JcaMember" type='radio' value='No' label='No' inline onChange={onChangeHandler}/>
-
-                    </div>
-                  </Form.Group>
-                  <div><span className='span'>Please select at least one option</span></div></div>
-            </div>:<div></div>}
+          
            { formData.Category.includes('SuprCuber')?<div className="form-group" >
               <label htmlFor="cubeCat" className="form-label">Which category you would like to participate</label>
               <div className='category'>
