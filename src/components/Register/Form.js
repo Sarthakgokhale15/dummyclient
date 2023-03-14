@@ -206,7 +206,7 @@ const validateForm=()=>{
     setloading(true);
 
     // https://super-legend-server-main.vercel.app
-     await axios.post("http://192.168.43.92:3003/user",{
+     await axios.post("https://super-legend-server-main.vercel.app/user",{
         'Access-Control-Allow-Origin' : '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
 
